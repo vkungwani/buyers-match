@@ -1,0 +1,6 @@
+com\buyersmatch\server\controller\LeadController.class
+com\buyersmatch\server\entity\Lead$LeadBuilder.class
+com\buyersmatch\server\ServerApplication.class
+com\buyersmatch\server\repository\LeadRepository.class
+com\buyersmatch\server\service\LeadService.class
+com\buyersmatch\server\entity\Lead.class
