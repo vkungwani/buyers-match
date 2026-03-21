@@ -136,7 +136,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
               src={logo}
               alt="BuyersMatch"
               className={`object-contain transition-all duration-500 ease-[cubic-bezier(0.165,0.84,0.44,1)] ${
-                scrolled ? "h-[38px]" : "h-[86px]"
+                scrolled ? "h-[38px]" : "h-[64px]"
               }`}
             />
           </Link>
@@ -160,68 +160,81 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
 
           {/* Nav Links */}
           <ul
-            className={`lg:flex items-center gap-6 list-none transition-all duration-300 ${
+            className={`list-none transition-all duration-300 ${
               isMobileMenuOpen
                 ? "fixed inset-0 bg-[#1B2A4A] flex flex-col pt-16 px-[8%] pb-6 z-[350] h-screen w-screen overflow-hidden"
-                : "hidden"
+                : "hidden lg:flex items-center gap-6"
             }`}
           >
-            <div className="space-y-4 mb-auto">
-              {navItem("method", "Our Method")}
-              {navItem("services", "How We Help")}
-              {navItem("purchases", "Results")}
-              {navItem("who", "Who We Help")}
-              {navItem("testimonials", "Testimonials")}
-            </div>
-
-            <li className="lg:hidden w-full space-y-5 border-t border-white/10 pt-6">
-              <div className="grid grid-cols-1 gap-3">
-                <a href={`mailto:${siteData.contact.email}`} className="flex items-center gap-2.5 text-white text-[11px] font-bold tracking-tight">
-                   <div className="w-5 h-5 rounded-md bg-white/5 flex items-center justify-center">
-                     <MailIcon className="w-2.5 h-2.5 text-[#2ABFBF]" />
-                   </div>
-                   {siteData.contact.email}
-                </a>
-                
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                  {siteData.contact.phones.map((phone, i) => (
-                    <a key={i} href={`tel:+61${phone.replace(/[^0-9]/g, "")}`} className="flex items-center gap-2.5 text-white text-[11px] font-bold tracking-tight">
-                       <div className="w-5 h-5 rounded-md bg-white/5 flex items-center justify-center">
-                         <PhoneIcon className="w-2.5 h-2.5 text-[#2ABFBF]" />
-                       </div>
-                       {phone}
-                    </a>
-                  ))}
+            {/* Desktop and Mobile Wrapper logic */}
+            {isMobileMenuOpen ? (
+              <>
+                <div className="space-y-4 mb-auto">
+                  {navItem("method", "Our Method")}
+                  {navItem("services", "How We Help")}
+                  {navItem("purchases", "Results")}
+                  {navItem("who", "Who We Help")}
+                  {navItem("testimonials", "Testimonials")}
                 </div>
-              </div>
 
-              <div className="flex items-center gap-2.5">
-                {siteData.socials.map((social) => {
-                  const Icon = getSocialIcon(social.name);
-                  const color = getSocialColor(social.name);
-                  return (
-                    <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/10">
-                       <Icon className="w-3.5 h-3.5" style={{ color }} />
+                <li className="lg:hidden w-full space-y-5 border-t border-white/10 pt-6">
+                  <div className="grid grid-cols-1 gap-3">
+                    <a href={`mailto:${siteData.contact.email}`} className="flex items-center gap-2.5 text-white text-[11px] font-bold tracking-tight">
+                       <div className="w-5 h-5 rounded-md bg-white/5 flex items-center justify-center">
+                         <MailIcon className="w-2.5 h-2.5 text-[#2ABFBF]" />
+                       </div>
+                       {siteData.contact.email}
                     </a>
-                  );
-                })}
-              </div>
+                    
+                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                      {siteData.contact.phones.map((phone, i) => (
+                        <a key={i} href={`tel:+61${phone.replace(/[^0-9]/g, "")}`} className="flex items-center gap-2.5 text-white text-[11px] font-bold tracking-tight">
+                           <div className="w-5 h-5 rounded-md bg-white/5 flex items-center justify-center">
+                             <PhoneIcon className="w-2.5 h-2.5 text-[#2ABFBF]" />
+                           </div>
+                           {phone}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
 
-              <div className="grid grid-cols-1 gap-2.5 pt-1">
-                <button className="w-full bg-white/5 text-[#2ABFBF] py-2.5 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] border border-[#2ABFBF]/20">
-                  CFA Calculator
-                </button>
-                <button
-                  onClick={(e) => {
-                    openCalendly(e);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="w-full bg-[#2ABFBF] text-[#1B2A4A] py-2.5 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-[#2ABFBF]/10"
-                >
-                  Free Strategy Call →
-                </button>
-              </div>
-            </li>
+                  <div className="flex items-center gap-2.5">
+                    {siteData.socials.map((social) => {
+                      const Icon = getSocialIcon(social.name);
+                      const color = getSocialColor(social.name);
+                      return (
+                        <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/10">
+                           <Icon className="w-3.5 h-3.5" style={{ color }} />
+                        </a>
+                      );
+                    })}
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-2.5 pt-1">
+                    <button className="w-full bg-white/5 text-[#2ABFBF] py-2.5 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] border border-[#2ABFBF]/20">
+                      CFA Calculator
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        openCalendly(e);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="w-full bg-[#2ABFBF] text-[#1B2A4A] py-2.5 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-[#2ABFBF]/10"
+                    >
+                      Free Strategy Call →
+                    </button>
+                  </div>
+                </li>
+              </>
+            ) : (
+              <>
+                {navItem("method", "Our Method")}
+                {navItem("services", "How We Help")}
+                {navItem("purchases", "Results")}
+                {navItem("who", "Who We Help")}
+                {navItem("testimonials", "Testimonials")}
+              </>
+            )}
           </ul>
 
           {/* Desktop Right */}
