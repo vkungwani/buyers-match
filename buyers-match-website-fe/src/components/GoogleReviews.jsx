@@ -289,68 +289,56 @@ const ReviewsContent = ({ reviews, setIsModalOpen, setReviewsData }) => {
     );
   }
 
-  const col1 = reviews.filter((_, i) => i % 3 === 0);
-  const col2 = reviews.filter((_, i) => i % 3 === 1);
-  const col3 = reviews.filter((_, i) => i % 3 === 2);
+  // Split reviews for left and right columns
+  const leftCol = reviews.filter((_, i) => i % 2 === 0);
+  const rightCol = reviews.filter((_, i) => i % 2 === 1);
 
   return (
-    <div className="relative group/scroller">
-      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <ScrollingColumn
-          items={col1}
-          duration={col1.length * 15}
-          className="h-[740px]"
-        />
-        <ScrollingColumn
-          items={col2}
-          duration={col2.length * 18}
-          reverse={true}
-          className="h-[740px]"
-        />
-        <ScrollingColumn
-          items={col3}
-          duration={col3.length * 16}
-          className="h-[740px]"
-        />
+    <div className="relative overflow-visible">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8 h-full md:min-h-[600px]">
+        {/* Left Side Reviews (Desktop Only) */}
+        <div className="hidden lg:block w-[28%] h-[600px]">
+          <ScrollingColumn items={leftCol} duration={leftCol.length * 15} className="h-full" />
+        </div>
+
+        {/* CENTER CONTENT */}
+        <div className="w-full lg:w-[44%] text-center px-4 flex flex-col items-center justify-center z-30">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="mb-6 w-full"
+          >
+             <h2 className="text-white font-black text-5xl md:text-6xl tracking-tighter mb-4 leading-tight">
+               What our <br />
+               <span className="text-[#2ABFBF]">clients say</span>
+             </h2>
+             <p className="text-white/40 text-[10px] uppercase font-black tracking-[0.4em] mb-10">Real people. Real results. Verified proof.</p>
+             
+             <RatingSummaryCard />
+
+             <button
+               onClick={() => setIsModalOpen(true)}
+               className="mt-10 group relative px-10 py-5 bg-[#2ABFBF] text-[#1B2A4A] font-black rounded-2xl shadow-[0_20px_40px_rgba(42,191,191,0.25)] hover:bg-white transition-all active:scale-95 overflow-hidden"
+             >
+               <span className="relative z-10 text-xs uppercase tracking-[0.2em]">Explore 80+ Stories →</span>
+             </button>
+          </motion.div>
+        </div>
+
+        {/* Right Side Reviews (Desktop Only) */}
+        <div className="hidden lg:block w-[28%] h-[600px]">
+          <ScrollingColumn items={rightCol} duration={rightCol.length * 18} reverse={true} className="h-full" />
+        </div>
+
+        {/* Mobile View: Single Column Scroller below center content */}
+        <div className="lg:hidden w-full h-[500px]">
+          <ScrollingColumn items={reviews} duration={reviews.length * 15} className="h-full" />
+        </div>
       </div>
 
-      <div className="md:hidden">
-        <ScrollingColumn
-          items={reviews}
-          duration={reviews.length * 20}
-          className="h-[1200px]"
-        />
-      </div>
-
-      {/* Tighter Overlays */}
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--navy)] via-[var(--navy)] to-transparent pointer-events-none z-20"></div>
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[var(--navy)] via-[var(--navy)] to-transparent pointer-events-none z-20"></div>
-
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30">
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="px-10 py-5 bg-[#29b8bd] text-white font-black rounded-2xl shadow-[0_20px_40px_rgba(41,184,189,0.3)] hover:bg-[#23a1a5] hover:scale-105 transition-all flex items-center gap-4 active:scale-95 group"
-        >
-          <span className="text-xs uppercase tracking-[0.2em]">
-            Explore All Stories
-          </span>
-          <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={3}
-                d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
+      {/* Edge Fades */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#1B2A4A] to-transparent pointer-events-none z-20"></div>
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1B2A4A] to-transparent pointer-events-none z-20"></div>
     </div>
   );
 };
@@ -364,26 +352,10 @@ const GoogleReviews = ({
   return (
     <section
       id="reviews"
-      style={{ backgroundColor: "var(--navy)" }}
-      className="relative py-12 pb-24 px-4 overflow-hidden scroll-mt-24"
+      style={{ backgroundColor: "#1B2A4A" }}
+      className="relative py-12 lg:py-4 px-4 overflow-hidden scroll-mt-24"
     >
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-8 flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-6"
-          >
-             <h2 className="text-white font-black text-4xl md:text-5xl tracking-tighter mb-2">
-               What our clients say
-             </h2>
-             <p className="text-white/40 text-[10px] uppercase font-black tracking-[0.4em]">Real people. Real results. No paid reviews.</p>
-          </motion.div>
-
-          <RatingSummaryCard />
-        </div>
-
+      <div className="max-w-[1500px] mx-auto relative z-10">
         <ReactGoogleReviews
           layout="custom"
           featurableId={featurableId}
