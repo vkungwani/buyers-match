@@ -1021,3 +1021,8 @@ footer{background:var(--navy);padding:64px 0 30px;color:rgba(255,255,255,.55)}
 .proc-step.active .ps-num {
   box-shadow: 0 0 12px rgba(42,191,191,.35);
 }
+
+/* Hide floating WhatsApp button when mobile menu is open */
+body.mobile-menu-open .wa-floating-btn {
+  display: none !important;
+}

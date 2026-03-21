@@ -8,6 +8,8 @@ import {
   LinkedInIcon,
   TikTokIcon,
   MapsIcon,
+  MailIcon,
+  PhoneIcon,
 } from "./SocialIcons";
 
 const TopBar = ({ className = "" }) => {
@@ -33,17 +35,17 @@ const TopBar = ({ className = "" }) => {
   const getSocialColor = (name) => {
     switch (name.toLowerCase()) {
       case "facebook":
-        return "#1877F2";
+        return "#0866FF";
       case "instagram":
         return "#E4405F";
       case "youtube":
         return "#FF0000";
       case "linkedin":
-        return "#0A66C2";
+        return "#004182";
       case "tiktok":
-        return "#ffffff";
+        return "#000000";
       case "maps":
-        return "#4285F4";
+        return "#EA4335";
       default:
         return "#29b8bd";
     }
@@ -52,7 +54,7 @@ const TopBar = ({ className = "" }) => {
   return (
     <div
       id="super-nav"
-      className={`bg-[#29B8BD] py-1.5 px-4 md:px-6 ${className}`}
+      className={`hidden lg:block bg-[#29B8BD] py-1.5 px-4 md:px-6 ${className}`}
     >
       <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center gap-3.5 md:gap-0">
         {/* Contact Info */}
@@ -62,7 +64,7 @@ const TopBar = ({ className = "" }) => {
             href={`mailto:${siteConfig.contact.email}`}
             className="flex items-center text-white hover:text-navy transition-all duration-300"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-white mr-3 animate-pulse shadow-[0_0_8px_white]"></span>
+            <MailIcon className="w-3 h-3 mr-2 animate-pulse" />
             {siteConfig.contact.email}
           </a>
           {/* Phone numbers */}
@@ -73,7 +75,7 @@ const TopBar = ({ className = "" }) => {
                 href={`tel:+61${phone.replace(/[^0-9]/g, "")}`}
                 className="flex items-center text-white hover:text-navy transition-all duration-300"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-white/30 mr-3"></span>
+                <PhoneIcon className="w-3 h-3 mr-2 opacity-80" />
                 {phone}
               </a>
             ))}
@@ -101,7 +103,7 @@ const TopBar = ({ className = "" }) => {
                 >
                   <Icon
                     className="w-4 h-4 md:w-[20px] md:h-[20px] transition-all duration-300"
-                    style={{ color: "white" }}
+                    style={{ color: brandColor }}
                   />
                 </motion.a>
               );

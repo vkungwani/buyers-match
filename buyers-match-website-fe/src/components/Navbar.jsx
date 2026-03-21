@@ -2,6 +2,37 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { siteData } from "../config/siteData";
 import logo from "../assets/bm-logo-white-text-1B2A4A.jpg";
+import {
+  MailIcon,
+  PhoneIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  YouTubeIcon,
+  TikTokIcon,
+} from "./SocialIcons";
+
+const getSocialIcon = (name) => {
+  switch (name.toLowerCase()) {
+    case "facebook": return FacebookIcon;
+    case "instagram": return InstagramIcon;
+    case "linkedin": return LinkedInIcon;
+    case "youtube": return YouTubeIcon;
+    case "tiktok": return TikTokIcon;
+    default: return FacebookIcon;
+  }
+};
+
+const getSocialColor = (name) => {
+  switch (name.toLowerCase()) {
+    case "facebook": return "#0866FF";
+    case "instagram": return "#E4405F";
+    case "linkedin": return "#004182";
+    case "youtube": return "#FF0000";
+    case "tiktok": return "#ffffff";
+    default: return "#2ABFBF";
+  }
+};
 
 const Navbar = ({ scrollToSection, openCalendly }) => {
   const [activeSection, setActiveSection] = useState("");
@@ -16,6 +47,21 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll and set state class when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("mobile-menu-open");
+    } else {
+      document.body.style.overflow = "unset";
+      document.body.classList.remove("mobile-menu-open");
+    }
+    return () => { 
+      document.body.style.overflow = "unset";
+      document.body.classList.remove("mobile-menu-open");
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,14 +101,14 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
         <a
           href={path}
           onClick={(e) => handleNavClick(e, id)}
-          className={`relative text-[13px] font-semibold transition-colors duration-200 ${
-            isActive
+          className={`relative text-[13.5px] font-semibold transition-colors duration-200 ${
+            isActive && !isMobileMenuOpen
               ? "text-[#2ABFBF] font-extrabold"
-              : "text-white/60 hover:text-[#2ABFBF]"
+              : "text-white hover:text-[#2ABFBF]"
           }`}
         >
           {label}
-          {isActive && (
+          {isActive && !isMobileMenuOpen && (
             <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#2ABFBF] transition-all duration-300 transform scale-100" />
           )}
         </a>
@@ -83,7 +129,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
         >
           <Link
             to="/"
-            className="flex-shrink-0"
+            className={`flex-shrink-0 transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-0 invisible pointer-events-none" : "opacity-100"}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <img
@@ -116,29 +162,65 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
           <ul
             className={`lg:flex items-center gap-6 list-none transition-all duration-300 ${
               isMobileMenuOpen
-                ? "fixed inset-0 top-[92px] bg-[#1B2A4A] flex-col p-8 z-[350] h-screen overflow-y-auto"
+                ? "fixed inset-0 bg-[#1B2A4A] flex flex-col pt-16 px-[8%] pb-6 z-[350] h-screen w-screen overflow-hidden"
                 : "hidden"
             }`}
           >
-            {navItem("method", "Our Method")}
-            {navItem("services", "How We Help")}
-            {navItem("purchases", "Results")}
-            {navItem("who", "Who We Help")}
-            {navItem("testimonials", "Testimonials")}
+            <div className="space-y-4 mb-auto">
+              {navItem("method", "Our Method")}
+              {navItem("services", "How We Help")}
+              {navItem("purchases", "Results")}
+              {navItem("who", "Who We Help")}
+              {navItem("testimonials", "Testimonials")}
+            </div>
 
-            <li className="lg:hidden mt-8 w-full space-y-4">
-              <button className="w-full bg-white/5 text-[#2ABFBF] py-3 rounded-lg font-bold border border-[#2ABFBF]/30">
-                CFA Calculator
-              </button>
-              <button
-                onClick={(e) => {
-                  openCalendly(e);
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full bg-[#2ABFBF] text-[#1B2A4A] py-3 rounded-lg font-bold shadow-lg shadow-[#2ABFBF]/30"
-              >
-                Free Strategy Call →
-              </button>
+            <li className="lg:hidden w-full space-y-5 border-t border-white/10 pt-6">
+              <div className="grid grid-cols-1 gap-3">
+                <a href={`mailto:${siteData.contact.email}`} className="flex items-center gap-2.5 text-white text-[11px] font-bold tracking-tight">
+                   <div className="w-5 h-5 rounded-md bg-white/5 flex items-center justify-center">
+                     <MailIcon className="w-2.5 h-2.5 text-[#2ABFBF]" />
+                   </div>
+                   {siteData.contact.email}
+                </a>
+                
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                  {siteData.contact.phones.map((phone, i) => (
+                    <a key={i} href={`tel:+61${phone.replace(/[^0-9]/g, "")}`} className="flex items-center gap-2.5 text-white text-[11px] font-bold tracking-tight">
+                       <div className="w-5 h-5 rounded-md bg-white/5 flex items-center justify-center">
+                         <PhoneIcon className="w-2.5 h-2.5 text-[#2ABFBF]" />
+                       </div>
+                       {phone}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                {siteData.socials.map((social) => {
+                  const Icon = getSocialIcon(social.name);
+                  const color = getSocialColor(social.name);
+                  return (
+                    <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/10">
+                       <Icon className="w-3.5 h-3.5" style={{ color }} />
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div className="grid grid-cols-1 gap-2.5 pt-1">
+                <button className="w-full bg-white/5 text-[#2ABFBF] py-2.5 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] border border-[#2ABFBF]/20">
+                  CFA Calculator
+                </button>
+                <button
+                  onClick={(e) => {
+                    openCalendly(e);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-[#2ABFBF] text-[#1B2A4A] py-2.5 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] shadow-lg shadow-[#2ABFBF]/10"
+                >
+                  Free Strategy Call →
+                </button>
+              </div>
             </li>
           </ul>
 

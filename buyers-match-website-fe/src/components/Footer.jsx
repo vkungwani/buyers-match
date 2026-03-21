@@ -1,6 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo_removebg.png";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  YouTubeIcon,
+  LinkedInIcon,
+  TikTokIcon,
+} from "./SocialIcons";
+
+const getSocialIcon = (name) => {
+  switch (name.toLowerCase()) {
+    case "facebook": return FacebookIcon;
+    case "instagram": return InstagramIcon;
+    case "youtube": return YouTubeIcon;
+    case "linkedin": return LinkedInIcon;
+    case "tiktok": return TikTokIcon;
+    default: return FacebookIcon;
+  }
+};
+
+const getSocialColor = (name) => {
+  switch (name.toLowerCase()) {
+    case "facebook": return "#0866FF";
+    case "instagram": return "#E4405F";
+    case "youtube": return "#FF0000";
+    case "linkedin": return "#004182";
+    case "tiktok": return "#ffffff";
+    default: return "#2ABFBF";
+  }
+};
 
 const Footer = ({ scrollToSection, openCalendly }) => {
   const handleNavClick = (e, hash) => {
@@ -87,12 +116,22 @@ const Footer = ({ scrollToSection, openCalendly }) => {
                   CFA Calculator
                 </button>
                 <div className="pt-4 grid grid-cols-5 gap-3">
-                  {/* Social Circles */}
-                  {['Facebook', 'Instagram', 'LinkedIn', 'YouTube', 'TikTok'].map(soc => (
-                    <div key={soc} className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:border-[#2ABFBF] hover:text-[#2ABFBF] transition-all cursor-pointer">
-                      <span className="text-[10px] font-black">{soc[0]}</span>
-                    </div>
-                  ))}
+                  {/* Social Brand Icons */}
+                  {['Facebook', 'Instagram', 'LinkedIn', 'YouTube', 'TikTok'].map(name => {
+                    const Icon = getSocialIcon(name);
+                    const color = getSocialColor(name);
+                    return (
+                      <div 
+                        key={name} 
+                        className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:border-white/30 hover:bg-white/10 transition-all cursor-pointer group"
+                      >
+                        <Icon 
+                          className="w-5 h-5 transition-transform group-hover:scale-110" 
+                          style={{ color }} 
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

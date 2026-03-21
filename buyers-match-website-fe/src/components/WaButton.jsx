@@ -46,7 +46,7 @@ export const WhatsAppFloatingButton = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999]">
+    <div className="wa-floating-btn fixed bottom-6 right-6 z-[9999]">
       <button
         onClick={handleWhatsAppClick}
         className="w-16 h-16 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_40px_rgba(37,211,102,0.6)] transition-all transform hover:scale-110 active:scale-95 group relative"
