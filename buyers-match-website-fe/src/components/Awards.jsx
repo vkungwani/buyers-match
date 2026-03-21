@@ -10,8 +10,8 @@ const Awards = () => {
         <div className="wrap">
           <div className="rv" style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div className="eyebrow">Recognition &amp; Credentials</div>
-            <AnimatedText className="section-h2" style={{color: '#fff'}} textParts={[{text:"Award-Winning Advocacy"}]} />
-            <p className="section-sub" style={{ maxWidth: '520px', margin: '0 auto', color: 'rgba(255,255,255,0.7)' }}>Industry recognition that reflects our commitment to excellence and client outcomes.</p>
+            <AnimatedText className="section-h2" style={{color: 'var(--navy)'}} textParts={[{text:"Award-Winning Advocacy"}]} />
+            <p className="section-sub" style={{ maxWidth: '520px', margin: '0 auto', color: 'var(--muted)' }}>Industry recognition that reflects our commitment to excellence and client outcomes.</p>
           </div>
 
           <div className="awards-grid">

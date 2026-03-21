@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo_removebg.png";
 
-const Footer = ({ scrollToSection }) => {
+const Footer = ({ scrollToSection, openCalendly }) => {
   const handleNavClick = (e, hash) => {
     if (scrollToSection) {
       e.preventDefault();
@@ -12,137 +12,98 @@ const Footer = ({ scrollToSection }) => {
 
   return (
     <>
-      <footer>
-        <div className="wrap">
-          <div className="foot-grid">
-            <div>
-              <div className="foot-logo">
-                <Link to="/">
-                  <img src={logo} alt="BuyersMatch" />
+      <footer className="bg-[#0A1224] text-white pt-20 pb-10 border-t border-white/5">
+        <div className="max-w-[1200px] mx-auto px-[5%]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Column 1: Brand */}
+            <div className="space-y-6">
+              <div className="mb-4">
+                <Link to="/" className="inline-block">
+                  <img src={logo} alt="BuyersMatch" className="h-14 w-auto brightness-0 invert" />
                 </Link>
+                <div className="text-[#2ABFBF] text-[10px] uppercase tracking-[0.3em] font-black mt-2">Buyers Advocacy</div>
               </div>
-              <div className="foot-logo-sub">Buyers Advocacy</div>
-              <p className="foot-desc">
-                Australia's most personal buyers advocacy. We find the right
-                property in the right market — for every type of buyer, across
-                every state and territory.
+              <p className="text-white/50 text-[13px] leading-relaxed">
+                Australia's personal buyers advocacy. We find the right properties in the right markets — for every type of buyer, state-wide.
               </p>
-              <div className="foot-contact-row">
-                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <a href="tel:0488847018">0488 847 018</a>
-                <span style={{color:'rgba(255,255,255,.2)'}}>·</span>
-                <a href="tel:0488847019">0488 847 019</a>
+              <div className="space-y-3 pt-2">
+                <a href="mailto:info@buyersmatch.com.au" className="flex items-center gap-3 text-[13px] text-white/70 hover:text-[#2ABFBF] transition-colors">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  info@buyersmatch.com.au
+                </a>
+                <div className="flex items-center gap-3 text-[13px] text-white/70">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                   0488 847 018 · 019
+                </div>
               </div>
-              <div className="foot-contact-row">
-                <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:info@buyersmatch.com.au">info@buyersmatch.com.au</a>
-              </div>
-              <div className="foot-soc">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="fsoc hover-lift" aria-label="LinkedIn">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.79 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="fsoc hover-lift" aria-label="Facebook">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="fsoc hover-lift" aria-label="YouTube">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="fsoc hover-lift" aria-label="Instagram">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                </a>
-              </div>
-              <div className="foot-rebaa">
-                <span
-                  className="animate-spin-slow"
-                  style={{ display: "inline-block" }}
+            </div>
+
+            {/* Column 2: Our Core */}
+            <div>
+              <h4 className="text-white font-bold text-[14px] uppercase tracking-widest mb-8 flex items-center gap-2">
+                <span className="w-4 h-[2px] bg-[#2ABFBF]"></span>
+                The Platform
+              </h4>
+              <ul className="space-y-4">
+                <li><a href="/#method" onClick={(e) => handleNavClick(e, "method")} className="text-white/50 hover:text-white transition-colors text-[13px]">The 4M Method</a></li>
+                <li><a href="/#services" onClick={(e) => handleNavClick(e, "services")} className="text-white/50 hover:text-white transition-colors text-[13px]">How We Help</a></li>
+                <li><a href="/#purchases" onClick={(e) => handleNavClick(e, "purchases")} className="text-white/50 hover:text-white transition-colors text-[13px]">Purchasing Results</a></li>
+                <li><a href="/#who" onClick={(e) => handleNavClick(e, "who")} className="text-white/50 hover:text-white transition-colors text-[13px]">Who We Help</a></li>
+                <li><a href="/#leadmagnet" onClick={(e) => handleNavClick(e, "leadmagnet")} className="text-white/50 hover:text-white transition-colors text-[13px]">Free 4M Guide</a></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Trust & Reviews */}
+            <div>
+              <h4 className="text-white font-bold text-[14px] uppercase tracking-widest mb-8 flex items-center gap-2">
+                <span className="w-4 h-[2px] bg-[#2ABFBF]"></span>
+                Social Proof
+              </h4>
+              <ul className="space-y-4">
+                <li><a href="/#testimonials" onClick={(e) => handleNavClick(e, "testimonials")} className="text-white/50 hover:text-white transition-colors text-[13px]">Client Success Stories</a></li>
+                <li><a href="/#video-testimonials" onClick={(e) => handleNavClick(e, "video-testimonials")} className="text-white/50 hover:text-white transition-colors text-[13px]">Video Interviews</a></li>
+                <li><a href="/#awards" onClick={(e) => handleNavClick(e, "awards")} className="text-white/50 hover:text-white transition-colors text-[13px]">Industry Awards</a></li>
+                <li><a href="/#reviews" onClick={(e) => handleNavClick(e, "reviews")} className="text-white/50 hover:text-white transition-colors text-[13px]">Google Reviews</a></li>
+                <li><a href="/#faq" onClick={(e) => handleNavClick(e, "faq")} className="text-white/50 hover:text-white transition-colors text-[13px]">Common Questions</a></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Quick Actions */}
+            <div>
+              <h4 className="text-white font-bold text-[14px] uppercase tracking-widest mb-8 flex items-center gap-2">
+                <span className="w-4 h-[2px] bg-[#2ABFBF]"></span>
+                Quick Actions
+              </h4>
+              <div className="space-y-4">
+                <button 
+                  onClick={openCalendly}
+                  className="w-full bg-[#2ABFBF] text-[#1B2A4A] py-3 rounded-xl font-bold text-[13px] hover:bg-white transition-all transform hover:-translate-y-1"
                 >
-                  ✓
-                </span>{" "}
-                BAI Member · Licensed Buyers Agents
+                  Free Strategy Call →
+                </button>
+                <button 
+                  className="w-full bg-white/5 border border-white/10 text-white py-3 rounded-xl font-bold text-[13px] hover:bg-white/10 transition-all"
+                >
+                  CFA Calculator
+                </button>
+                <div className="pt-4 grid grid-cols-5 gap-3">
+                  {/* Social Circles */}
+                  {['Facebook', 'Instagram', 'LinkedIn', 'YouTube', 'TikTok'].map(soc => (
+                    <div key={soc} className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:border-[#2ABFBF] hover:text-[#2ABFBF] transition-all cursor-pointer">
+                      <span className="text-[10px] font-black">{soc[0]}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="foot-col">
-              <h4>Services</h4>
-              <ul>
-                <li>
-                  <a
-                    href="/#services"
-                    onClick={(e) => handleNavClick(e, "services")}
-                  >
-                    Investment Property
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#services"
-                    onClick={(e) => handleNavClick(e, "services")}
-                  >
-                    Home Buyer Advocacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#services"
-                    onClick={(e) => handleNavClick(e, "services")}
-                  >
-                    First Home Buyers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#method"
-                    onClick={(e) => handleNavClick(e, "method")}
-                  >
-                    Expert Negotiation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#services"
-                    onClick={(e) => handleNavClick(e, "services")}
-                  >
-                    Auction Bidding
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#services"
-                    onClick={(e) => handleNavClick(e, "services")}
-                  >
-                    Renovator &amp; Flipper Advocacy
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="foot-col">
-              <h4>Resources</h4>
-              <ul>
-                <li>
-                  <a
-                    href="/#leadmagnet"
-                    onClick={(e) => handleNavClick(e, "leadmagnet")}
-                  >
-                    4M Framework Guide
-                  </a>
-                </li>
-
-                <li>
-                  <Link to="/case-studies">Case Studies</Link>
-                </li>
-
-                <li>
-                  <a href="/#contact">Calculators</a>
-                </li>
-              </ul>
-            </div>
-            {/* <div className="foot-col"><h4>Locations</h4><ul><li><Link to="/case-studies">Brisbane Buyers Agent</Link></li><li><Link to="/case-studies">Sydney Buyers Agent</Link></li><li><Link to="/case-studies">Melbourne Buyers Agent</Link></li><li><Link to="/case-studies">Gold Coast Buyers Agent</Link></li><li><Link to="/case-studies">Perth Buyers Agent</Link></li><li><Link to="/case-studies">All Locations →</Link></li></ul></div> */}
           </div>
-          <div className="foot-bottom">
-            <span>© 2025 BuyersMatch Buyers Advocacy Pty Ltd</span>
-            <div className="foot-legal">
-              <Link to="/privacy-policy">Privacy Policy</Link>
-              <Link to="/terms">Terms</Link>
-              <Link to="/terms">Disclaimer</Link>
+
+          <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[12px] text-white/30">
+            <p>© 2025 BuyersMatch Buyers Advocacy Pty Ltd. BAI Member · Licensed Agents.</p>
+            <div className="flex gap-8">
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
             </div>
           </div>
         </div>

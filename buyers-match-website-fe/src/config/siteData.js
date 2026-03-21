@@ -50,13 +50,18 @@ export const siteData = {
     ],
 
     videoTestimonials: [
-        { id: 1, name: "Client Testimonial - Vinutha", quote: "", youtubeId: "vmZ-wy00s-k", image: "https://img.youtube.com/vi/vmZ-wy00s-k/maxresdefault.jpg" },
-        { id: 2, name: "Client Testimonial - Manju", quote: "", youtubeId: "X3TZe_DaO5g", image: "https://img.youtube.com/vi/X3TZe_DaO5g/maxresdefault.jpg" },
-        { id: 3, name: "Client Testimonial - Dinah and Arjun", quote: "", youtubeId: "30we2JzIsE8", image: "https://img.youtube.com/vi/30we2JzIsE8/maxresdefault.jpg" },
-        { id: 4, name: "BuyersMatch - Client Testimonial", quote: "", youtubeId: "q3IfD-X7Cf0", image: "https://img.youtube.com/vi/q3IfD-X7Cf0/maxresdefault.jpg" },
-        { id: 5, name: "When you Work with Experts", quote: "", youtubeId: "vLiopriS5HA", image: "https://img.youtube.com/vi/vLiopriS5HA/maxresdefault.jpg" },
-        { id: 6, name: "Thank You for Trusting Us", quote: "", youtubeId: "ISsxVHcajes", image: "https://img.youtube.com/vi/ISsxVHcajes/maxresdefault.jpg" },
+        { id: 1, name: "Client Testimonial - Vinutha", quote: "", youtubeId: "vmZ-wy00s-k", image: "https://img.youtube.com/vi/vmZ-wy00s-k/maxresdefault.jpg",subheading:"Investment Property · Melbourne" },
+        { id: 2, name: "Client Testimonial - Manju", quote: "", youtubeId: "X3TZe_DaO5g", image: "https://img.youtube.com/vi/X3TZe_DaO5g/maxresdefault.jpg",subheading:"First Investment · Brisbane" },
+        { id: 3, name: "Client Testimonial - Dinah and Arjun", quote: "", youtubeId: "30we2JzIsE8", image: "https://img.youtube.com/vi/30we2JzIsE8/maxresdefault.jpg",subheading:"First Home · Brisbane" },
+        { id: 4, name: "BuyersMatch - Client Testimonial", quote: "", youtubeId: "q3IfD-X7Cf0", image: "https://img.youtube.com/vi/q3IfD-X7Cf0/maxresdefault.jpg",subheading:"Investment Property · Brisbane" },
+        { id: 5, name: "When you Work with Experts", quote: "", youtubeId: "vLiopriS5HA", image: "https://img.youtube.com/vi/vLiopriS5HA/maxresdefault.jpg",subheading:"Portfolio Investor · Sydney" },
+        { id: 6, name: "Thank You for Trusting Us", quote: "", youtubeId: "ISsxVHcajes", image: "https://img.youtube.com/vi/ISsxVHcajes/maxresdefault.jpg",subheading:"First Home · Brisbane" },
     ],
+
+    whatsappMessageInfo: {
+        phoneNumber: '+61466914929',
+        prefilledMessage: 'Hi, I am interested in BuyersMatch services. Please share next steps.'
+    },
 
     successStories: [
         {
