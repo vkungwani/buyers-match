@@ -54,7 +54,7 @@ const TopBar = ({ className = "" }) => {
   return (
     <div
       id="super-nav"
-      className={`hidden lg:block bg-[#29B8BD] py-1.5 px-4 md:px-6 ${className}`}
+      className={`hidden lg:block bg-[#29B8BD] py-0.5 px-4 md:px-6 ${className}`}
     >
       <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center gap-3.5 md:gap-0">
         {/* Contact Info */}
@@ -87,7 +87,7 @@ const TopBar = ({ className = "" }) => {
           <span className="text-[10px] font-bold text-black tracking-[0.2em] uppercase mr-2 hidden lg:block">
             Follow Us
           </span>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1">
             {siteConfig.socials.map((social) => {
               const Icon = getSocialIcon(social.name);
               const brandColor = getSocialColor(social.name);
@@ -99,10 +99,10 @@ const TopBar = ({ className = "" }) => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
+                  className="w-6 h-6 md:w-6 md:h-6 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300"
                 >
                   <Icon
-                    className="w-4 h-4 md:w-[20px] md:h-[20px] transition-all duration-300"
+                    className="w-4 h-4 md:w-4 md:h-4 transition-all duration-300"
                     style={{ color: brandColor }}
                   />
                 </motion.a>

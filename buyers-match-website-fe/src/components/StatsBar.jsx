@@ -19,8 +19,8 @@ const CountUp = ({ to, prefix = "", suffix = "", duration = 2, decimals = 0 }) =
     }
   }, [isInView, to, duration]);
 
-  const formattedValue = decimals > 0 
-    ? displayValue.toFixed(decimals) 
+  const formattedValue = decimals > 0
+    ? displayValue.toFixed(decimals)
     : Math.floor(displayValue).toString();
 
   return <span ref={nodeRef}>{prefix}{formattedValue}{suffix}</span>;
@@ -28,16 +28,25 @@ const CountUp = ({ to, prefix = "", suffix = "", duration = 2, decimals = 0 }) =
 
 const StatsBar = () => {
   return (
-    <>
-      <div id="statsbar">
-  <div className="stats-row">
-    <div className="stat-cell rv"><span className="stat-n"><CountUp to={150} suffix="+" duration={2} /></span><span className="stat-l">Properties Secured</span></div>
-    <div className="stat-cell rv d1"><span className="stat-n"><CountUp to={5} decimals={1} suffix="★" duration={1.5} /></span><span className="stat-l">All 5 Star Reviews</span></div>
-    <div className="stat-cell rv d2"><span className="stat-n"><CountUp to={100} prefix="$" suffix="M+" duration={2.5} /></span><span className="stat-l">Properties Purchased</span></div>
-    <div className="stat-cell rv d3"><span className="stat-n"><CountUp to={30} prefix="$" suffix="M+" duration={2.2} /></span><span className="stat-l">Equity Generated</span></div>
-  </div>
-</div>
-    </>
+    <div id="statsbar" className="bg-[#2ABFBF] relative">
+      <div className="grid grid-cols-2 md:grid-cols-4">
+        {[
+          { to: 150, suffix: '+', label: 'Properties Secured', delay: 0 },
+          { to: 5, decimals: 1, suffix: '★', label: 'All 5 Star Reviews', delay: 0.1 },
+          { to: 100, prefix: '$', suffix: 'M+', label: 'Properties Purchased', delay: 0.2 },
+          { to: 30, prefix: '$', suffix: 'M+', label: 'Equity Generated', delay: 0.3 },
+        ].map((stat, i) => (
+          <div key={i} className="py-6 px-5 text-center border-r border-[rgba(27,42,74,.14)] last:border-r-0">
+            <span className="font-['Playfair_Display',Georgia,serif] text-[28px] sm:text-[36px] md:text-[42px] font-black text-[#1B2A4A] leading-none block">
+              <CountUp to={stat.to} prefix={stat.prefix || ''} suffix={stat.suffix} duration={2 + i * 0.2} decimals={stat.decimals || 0} />
+            </span>
+            <span className="text-[11px] font-bold text-[rgba(27,42,74,.6)] uppercase tracking-[.1em] mt-[5px] block">
+              {stat.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

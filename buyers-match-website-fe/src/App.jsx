@@ -5,15 +5,15 @@ import { siteData } from "./config/siteData";
 import LeadCaptureModal from "./components/LeadCaptureModal";
 import "./index.css";
 import StatsBar from "./components/StatsBar";
-import Who from "./components/Who";
+import WhoWeHelp from "./components/WhoWeHelp";
 import Credentials from "./components/Credentials";
-import Services from "./components/Services";
+import HowWeHelp from "./components/HowWeHelp";
 import VideoTestimonials from "./components/VideoTestimonials";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import RightFit from "./components/RightFit";
 import LeadMagnet from "./components/LeadMagnet";
-import Purchases from "./components/Purchases";
+import Results from "./components/Results";
 import Method from "./components/Method";
 import Different from "./components/Different";
 import GoogleReviews from "./components/GoogleReviews";
@@ -70,15 +70,20 @@ function App() {
           scrollToSection={scrollToSection}
           openLeadModal={openLeadModal}
         />
-        <Services />
+        <HowWeHelp />
+
+        {/* {
+Method,HowWeHelp, Results, Testimonials
+} */}
+
         <Different />
-        <Purchases />
+        <Results />
         <Process />
-        <Who />
+        <WhoWeHelp />
         <VideoTestimonials />
-        <Awards />
-        <SocialBar />
         <GoogleReviews />
+        <SocialBar />
+        <Awards />
         <Credentials />
         <LeadMagnet openLeadModal={openLeadModal} />
         <Blog />
@@ -91,7 +96,7 @@ function App() {
           openCalendly={openCalendly}
           openLeadModal={openLeadModal}
         />
-        <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} />
+        <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} openLeadModal={openLeadModal} />
       </>
     );
   };

@@ -107,7 +107,7 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
         style={{
           background: '#fff',
           borderRadius: '20px',
-          padding: '44px 40px',
+          padding: window.innerWidth < 640 ? '28px 20px' : '44px 40px',
           maxWidth: '460px',
           width: '92%',
           boxShadow: '0 24px 80px rgba(27,42,74,0.25)',

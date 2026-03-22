@@ -30,7 +30,7 @@ const Blog = () => {
     <>
       <section id="blog" style={{ overflow: "hidden" }}>
         <div className="wrap">
-          <div className="blog-top rv" style={{ marginBottom: "48px" }}>
+          <div className="blog-top rv" style={{ marginBottom: "48px", flexDirection: "column", alignItems: "flex-start", gap: "16px" }}>
             <div>
               <div className="eyebrow" style={{ color: "var(--teal)" }}>
                 Property Insights
@@ -47,7 +47,7 @@ const Blog = () => {
             <Link
               to="/blog"
               className="btn btn-teal-ghost"
-              style={{ fontSize: "12px", fontWeight: "800" }}
+              style={{ fontSize: "12px", fontWeight: "800", whiteSpace: "normal", textAlign: "left" }}
             >
               Explore the Knowledge Hub →
             </Link>
@@ -79,7 +79,7 @@ const Blog = () => {
                 key={`${blog.id}-${idx}`}
                 className="bcard hover-lift"
                 style={{
-                  width: "400px",
+                  width: "min(400px, 85vw)",
                   flexShrink: 0,
                   textDecoration: "none",
                   background: "#fff",
