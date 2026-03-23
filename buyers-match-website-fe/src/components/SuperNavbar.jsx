@@ -10,6 +10,9 @@ import {
   MapsIcon,
   MailIcon,
   PhoneIcon,
+  GoogleLogo,
+  GoogleMapsLogo,
+  GoogleBusinessIcon,
 } from "./SocialIcons";
 
 const TopBar = ({ className = "" }) => {
@@ -26,7 +29,9 @@ const TopBar = ({ className = "" }) => {
       case "tiktok":
         return TikTokIcon;
       case "maps":
-        return MapsIcon;
+        return GoogleMapsLogo;
+      case "google":
+        return GoogleLogo;
       default:
         return FacebookIcon;
     }
@@ -46,6 +51,8 @@ const TopBar = ({ className = "" }) => {
         return "#000000";
       case "maps":
         return "#EA4335";
+      case "google":
+        return "#4285F4";
       default:
         return "#29b8bd";
     }

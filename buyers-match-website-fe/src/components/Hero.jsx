@@ -323,7 +323,11 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 src={usImg}
                 alt="Puja & Vish - BuyersMatch Founders"
                 className="w-full h-auto object-contain object-center block brightness-[1.05] contrast-[1.02] saturate-[1.02] transition-all duration-400"
-                style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.5))" }}
+                style={{
+                  filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.5))",
+                  WebkitMaskImage: "radial-gradient(ellipse 55% 75% at 50% 25%, black 40%, transparent 100%)",
+                  maskImage: "radial-gradient(ellipse 55% 75% at 50% 25%, black 40%, transparent 100%)"
+                }}
               />
 
               <div

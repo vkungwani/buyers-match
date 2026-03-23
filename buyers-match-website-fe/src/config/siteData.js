@@ -8,6 +8,13 @@ export const siteData = {
     stats: {
         totalClients: 150,
     },
+    credentials: [
+        { id: 'bai', title: 'BAI Member', sub: "Buyer's Agent\nInstitute" },
+        { id: 'licensed', title: 'Licensed Agents', sub: 'All states &\nterritories' },
+        { id: 'conflicts', title: 'Zero Conflicts', sub: 'No vendor fees or\nreferral kickbacks' },
+        { id: 'insurance', title: 'PI Insurance', sub: 'Full professional\nindemnity cover' },
+        { id: 'google', title: '5.0 Google Rating', sub: '100% Five\nStar Reviews' },
+    ],
     contact: {
         address: "Glen Waverley, VIC 3150",
         phones: ["0466 914 929", "0434 118 033"],
@@ -20,6 +27,7 @@ export const siteData = {
         { name: "youtube", icon: "YouTube", url: "https://www.youtube.com/@BuyersMatch" },
         { name: "linkedin", icon: "LinkedIn", url: "https://www.linkedin.com/in/puja-dhanetwal/?originalSubdomain=au" },
         { name: "tiktok", icon: "TikTok", url: "https://www.tiktok.com/@buyersmatch" },
+        { name: "google", icon: "Google", url: "https://share.google/U5u6U6rlaAZs8KpBl" },
         { name: "maps", icon: "Maps", url: "https://www.google.com/maps/place/BuyersMatch/@-36.5712557,99.6994519,3z/data=!4m6!3m5!1s0x9a64e54f2968b55:0x765d586cc54a73c!8m2!3d-24.1501978!4d136.0132792!16s%2Fg%2F11v6z05n76?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D" },
     ],
 

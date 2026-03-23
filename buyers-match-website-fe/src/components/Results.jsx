@@ -1,12 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, useAnimation } from 'framer-motion';
-import AnimatedText from './AnimatedText';
-import CaseStudyCard from './CaseStudyCard';
-import { siteData } from '../config/siteData';
-import { FadeUp } from './Animations';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import AnimatedText from "./AnimatedText";
+import CaseStudyCard from "./CaseStudyCard";
+import { siteData } from "../config/siteData";
+import { FadeUp } from "./Animations";
 
-const allProperties = [...siteData.successStories, ...siteData.successStories, ...siteData.successStories, ...siteData.successStories];
+const allProperties = [
+  ...siteData.successStories,
+  ...siteData.successStories,
+  ...siteData.successStories,
+  ...siteData.successStories,
+];
 
 const Results = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -33,11 +38,26 @@ const Results = () => {
               Proven Results
             </div>
             <AnimatedText
-              className="font-['Playfair_Display',Georgia,serif] text-[clamp(26px,3.8vw,44px)] font-bold text-[#1B2A4A] mb-0 leading-[1.15]"
-              textParts={[{ text: "Properties we've " }, { text: "secured", em: true }]}
+              className="font-['Playfair_Display',Georgia,serif] text-[clamp(26px,3.8vw,44px)] font-bold text-[#1B2A4A] mb-4 leading-[1.15]"
+              textParts={[
+                { text: "Properties we've " },
+                { text: "secured", em: true },
+              ]}
             />
+            <p className="text-[16px] text-[#1B2A4A]/70 leading-[1.7] max-w-[680px]">
+              We source on and off-market opportunities, then negotiate hard to
+              secure the right property at the right price.
+              <span className="font-bold text-[#1B2A4A]">
+                {" "}
+                Using deep agent relationships and rigorous price analysis, we
+                give you access and an edge other buyers simply don't have.
+              </span>
+            </p>
           </div>
-          <Link to="/case-studies" className="text-[13px] font-bold text-[#1E9898] no-underline hover:underline">
+          <Link
+            to="/case-studies"
+            className="text-[13px] font-bold text-[#1E9898] no-underline hover:underline"
+          >
             View all case studies →
           </Link>
         </FadeUp>
@@ -54,13 +74,13 @@ const Results = () => {
           dragConstraints={{ left: -2400, right: 0 }}
           animate={controls}
           className="flex gap-5"
-          style={{ padding: '0 5% 40px', width: 'max-content' }}
+          style={{ padding: "0 5% 40px", width: "max-content" }}
         >
           {allProperties.map((prop, i) => (
             <CaseStudyCard
               key={i}
               story={prop}
-              style={{ width: 'min(380px, 85vw)', flexShrink: 0 }}
+              style={{ width: "min(380px, 85vw)", flexShrink: 0 }}
             />
           ))}
         </motion.div>

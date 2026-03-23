@@ -10,6 +10,8 @@ import {
   LinkedInIcon,
   YouTubeIcon,
   TikTokIcon,
+  GoogleLogo,
+  GoogleMapsLogo,
 } from "./SocialIcons";
 
 const CalculatorIcon = ({ className, style }) => (
@@ -48,6 +50,10 @@ const getSocialIcon = (name) => {
       return YouTubeIcon;
     case "tiktok":
       return TikTokIcon;
+    case "google":
+      return GoogleLogo;
+    case "maps":
+      return GoogleMapsLogo;
     default:
       return FacebookIcon;
   }
@@ -65,6 +71,10 @@ const getSocialColor = (name) => {
       return "#FF0000";
     case "tiktok":
       return "#ffffff";
+    case "google":
+      return "#4285F4";
+    case "maps":
+      return "#EA4335";
     default:
       return "#2ABFBF";
   }
@@ -146,7 +156,8 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
   const navItem = (id, label) => {
     let isActive = false;
     if (id === "testimonials") {
-      isActive = activeSection === "video-testimonials" || activeSection === "reviews";
+      isActive =
+        activeSection === "video-testimonials" || activeSection === "reviews";
     } else {
       isActive = activeSection === id;
     }
@@ -284,7 +295,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
                   <div className="grid grid-cols-1 gap-2.5 pt-1">
                     <button className="w-full bg-white/5 text-white py-2.5 rounded-lg font-bold text-[11px] uppercase tracking-[0.15em] border border-white/10 hover:border-[#2ABFBF]/40 transition-all flex items-center justify-center gap-2">
                       <CalculatorIcon className="w-3.5 h-3.5 text-[#2ABFBF]" />
-                      CFA Calculator
+                      Cashflow Calculator
                     </button>
                     <button
                       onClick={(e) => {
@@ -313,7 +324,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
           <div className="hidden lg:flex items-center gap-2.5">
             <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-white text-[12px] font-bold rounded-lg hover:border-[#2ABFBF]/50 hover:bg-white/10 transition-all duration-300 group shadow-lg shadow-black/20">
               <CalculatorIcon className="w-3.5 h-3.5 text-[#2ABFBF] group-hover:scale-110 transition-transform" />
-              CFA Calculator
+              Cashflow Calculator
             </button>
             <button
               onClick={openCalendly}

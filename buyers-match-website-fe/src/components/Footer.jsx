@@ -7,6 +7,9 @@ import {
   YouTubeIcon,
   LinkedInIcon,
   TikTokIcon,
+  GoogleLogo,
+  GoogleMapsLogo,
+  GoogleBusinessIcon,
 } from "./SocialIcons";
 
 const getSocialIcon = (name) => {
@@ -21,6 +24,10 @@ const getSocialIcon = (name) => {
       return LinkedInIcon;
     case "tiktok":
       return TikTokIcon;
+    case "google":
+      return GoogleLogo;
+    case "maps":
+      return GoogleMapsLogo;
     default:
       return FacebookIcon;
   }
@@ -38,6 +45,10 @@ const getSocialColor = (name) => {
       return "#004182";
     case "tiktok":
       return "#ffffff";
+    case "google":
+      return "#4285F4";
+    case "maps":
+      return "#EA4335";
     default:
       return "#2ABFBF";
   }
@@ -263,6 +274,8 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                     "LinkedIn",
                     "YouTube",
                     "TikTok",
+                    "Google",
+                    "Maps",
                   ].map((name) => {
                     const Icon = getSocialIcon(name);
                     const color = getSocialColor(name);

@@ -49,23 +49,31 @@ const Process = () => {
     <section id="process" className="py-[52px] bg-[#1B2A4A] relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-[5%]">
         {/* Header */}
-        <div className="mb-7">
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.15em] uppercase text-[#2ABFBF]/70 mb-3 before:content-[''] before:w-[22px] before:h-[2px] before:bg-[#2ABFBF] before:rounded-[2px] before:shrink-0">
-            How We Work
-          </div>
-          <AnimatedText
-            className="font-['Playfair_Display',Georgia,serif] text-[clamp(26px,3.8vw,44px)] font-bold text-white leading-[1.15] mb-2"
-            textParts={[{ text: "6 steps from brief " }, { text: "to settlement", em: true }]}
-          />
-          <p className="text-[16px] text-white/55 leading-[1.7] max-w-[460px]">
-            We don't just hand you a framework — we apply it for you, every step of the way.
-          </p>
-        </div>
+
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[72px] items-start">
-          {/* Steps */}
-          <div ref={stepsRef} className="flex flex-col relative">
+          {/* Steps Column */}
+          <div className="flex flex-col">
+            {/* Header moved here */}
+            <div className="mb-10 lg:mb-14">
+              <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.15em] uppercase text-[#2ABFBF]/70 mb-3 before:content-[''] before:w-[22px] before:h-[2px] before:bg-[#2ABFBF] before:rounded-[2px] before:shrink-0">
+                How We Work
+              </div>
+              <AnimatedText
+                className="font-['Playfair_Display',Georgia,serif] text-[clamp(30px,4.2vw,50px)] font-bold text-white leading-[1.1] mb-5"
+                textParts={[
+                  { text: "6 steps from brief " },
+                  { br: true },
+                  { text: "to settlement", em: true }
+                ]}
+              />
+              <p className="text-[16px] text-white/55 leading-[1.7] max-w-[460px]">
+                We don't just hand you a framework — we apply it for you, every step of the way.
+              </p>
+            </div>
+
+            <div ref={stepsRef} className="flex flex-col relative">
             {/* Animated line */}
             <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-white/[0.08] rounded-sm z-0">
               <div
@@ -94,10 +102,11 @@ const Process = () => {
                 </div>
               </div>
             ))}
+            </div>
           </div>
 
           {/* Panel */}
-          <div className="bg-[#1B2A4A] rounded-[20px] p-[24px_20px] md:p-[38px_34px] md:sticky top-[86px] overflow-hidden relative border border-[rgba(42,191,191,.12)]">
+          <div className="bg-[#1B2A4A] rounded-[20px] p-[24px_20px] md:p-[38px_34px] md:sticky top-[86px] overflow-hidden relative border border-[rgba(42,191,191,.12)] md:-mt-10 lg:-mt-14">
             {/* Grid BG */}
             <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(42,191,191,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(42,191,191,.05)_1px,transparent_1px)] bg-[length:38px_38px]" />
             <div className="relative z-[1]">

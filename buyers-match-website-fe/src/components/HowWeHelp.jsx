@@ -181,10 +181,10 @@ const HowWeHelp = () => {
               <div
                 style={{
                   padding: "11px 28px",
-                  background: "rgba(42,191,191,.08)",
+                  background: "var(--teal)",
                   fontSize: "11px",
                   fontWeight: "800",
-                  color: "var(--teal-d)",
+                  color: "var(--navy)",
                   letterSpacing: ".1em",
                   textTransform: "uppercase",
                   display: "flex",
@@ -196,13 +196,13 @@ const HowWeHelp = () => {
                   style={{
                     width: "20px",
                     height: "20px",
-                    background: "var(--teal)",
+                    background: "var(--navy)",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "9px",
-                    color: "var(--navy)",
+                    color: "var(--teal)",
                     fontWeight: "900",
                     flexShrink: "0",
                   }}
@@ -260,7 +260,9 @@ const HowWeHelp = () => {
                 Strategy
               </div>
             </div>
-            <style dangerouslySetInnerHTML={{ __html: `
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
               .hwh-pipeline{display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(42,191,191,.25);box-shadow:0 4px 20px rgba(42,191,191,.1)}
               .hwh-pipeline>div{border-radius:0!important}
               .hwh-chevron{display:none!important}
@@ -270,7 +272,9 @@ const HowWeHelp = () => {
                 .hwh-pipeline>div:first-child{border-radius:10px 0 0 10px!important}
                 .hwh-pipeline>div:last-child{border-radius:0 10px 10px 0!important}
               }
-            `}} />
+            `,
+              }}
+            />
           </FadeUp>
 
           {/* 4 equal cards */}
@@ -851,7 +855,8 @@ const HowWeHelp = () => {
             >
               <div
                 style={{
-                  background: "linear-gradient(135deg,#1B2A4A 0%,#22345A 100%)",
+                  background:
+                    "linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 100%)",
                   padding: "28px 26px 22px",
                   position: "relative",
                   overflow: "hidden",
@@ -865,7 +870,7 @@ const HowWeHelp = () => {
                     width: "90px",
                     height: "90px",
                     borderRadius: "50%",
-                    background: "rgba(42,191,191,.1)",
+                    background: "rgba(255,255,255,.08)",
                   }}
                 ></div>
                 <div
@@ -876,7 +881,7 @@ const HowWeHelp = () => {
                     width: "60px",
                     height: "60px",
                     borderRadius: "50%",
-                    background: "rgba(42,191,191,.06)",
+                    background: "rgba(255,255,255,.05)",
                   }}
                 ></div>
                 <div
@@ -896,13 +901,13 @@ const HowWeHelp = () => {
                   </div>
                   <div
                     style={{
-                      background: "rgba(42,191,191,.2)",
-                      border: "1.5px solid rgba(42,191,191,.5)",
+                      background: "rgba(255,255,255,.2)",
+                      border: "1.5px solid rgba(255,255,255,.4)",
                       borderRadius: "8px",
                       padding: "4px 10px",
                       fontSize: "10px",
                       fontWeight: "900",
-                      color: "var(--teal)",
+                      color: "#fff",
                       letterSpacing: ".12em",
                     }}
                   >
@@ -913,7 +918,7 @@ const HowWeHelp = () => {
                   style={{
                     fontSize: "10px",
                     fontWeight: "800",
-                    color: "rgba(255,255,255,.5)",
+                    color: "rgba(255,255,255,.7)",
                     letterSpacing: ".12em",
                     textTransform: "uppercase",
                     marginBottom: "4px",
@@ -1085,8 +1090,8 @@ const HowWeHelp = () => {
                 </ul>
                 <div
                   style={{
-                    background: "rgba(27,42,74,.06)",
-                    borderLeft: "3px solid var(--navy)",
+                    background: "var(--teal-l)",
+                    borderLeft: "3px solid var(--teal)",
                     borderRadius: "0 8px 8px 0",
                     padding: "10px 14px",
                     fontSize: "12px",
@@ -1096,7 +1101,7 @@ const HowWeHelp = () => {
                 >
                   <span
                     style={{
-                      color: "var(--navy)",
+                      color: "var(--teal-d)",
                       fontSize: "10px",
                       fontWeight: "800",
                       letterSpacing: ".08em",
@@ -1107,7 +1112,7 @@ const HowWeHelp = () => {
                   >
                     Outcome
                   </span>
-                  Right property secured at the right price
+                  Right property secured at the right price, every single time
                 </div>
               </div>
             </TiltCard>

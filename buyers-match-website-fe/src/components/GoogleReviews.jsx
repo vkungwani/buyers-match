@@ -49,7 +49,7 @@ const RatingSummaryCard = () => {
             </div>
           </div>
           <p className="text-[10px] font-black text-white/50 uppercase tracking-[0.2em] mt-1 whitespace-nowrap">
-            Trusted by Over 80+ Clients
+            Rated 5.0 — Every Client, Every Time
           </p>
         </div>
       </div>
