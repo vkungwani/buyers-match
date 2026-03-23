@@ -238,7 +238,19 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                     className="text-white/50 hover:text-white transition-colors text-[13px] flex items-center gap-1.5"
                   >
                     Client Portal
-                    <svg className="w-3 h-3 text-[#2ABFBF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <svg
+                      className="w-3 h-3 text-[#2ABFBF]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      ></path>
+                    </svg>
                   </a>
                 </li>
               </ul>
@@ -264,7 +276,7 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                   Free Strategy Call →
                 </button>
                 <button className="w-full bg-white/5 border border-white/10 text-white py-3 rounded-xl font-bold text-[13px] hover:bg-white/10 transition-all">
-                  CFA Calculator
+                  Cashflow Calculator
                 </button>
                 <div className="pt-4 grid grid-cols-5 gap-3">
                   {/* Social Brand Icons */}

@@ -15,24 +15,7 @@ const cardData = [
     image: propertyImg,
     tag: "Investor Match",
   },
-  {
-    title: "Owner Occupiers",
-    desc: "Find and secure the right home without competing blind at auction. Expert advocacy on your side every step of the way.",
-    image: ownerImg,
-    tag: "Home Buyer",
-  },
-  {
-    title: "First Home Buyers",
-    desc: "Navigate your first purchase with expert guidance from day one. We simplify the complex so you buy with confidence.",
-    image: firstHomeImg,
-    tag: "First Purchase",
-  },
-  {
-    title: "Renovators & Flippers",
-    desc: "Find undervalued properties with strong renovation or flip potential. We source the deals others miss.",
-    image: renovationImg,
-    tag: "Value Add",
-  },
+
   {
     title: "Interstate Buyers",
     desc: "Invest anywhere in Australia with local knowledge on the ground. We are your eyes and ears in every market.",
@@ -44,6 +27,24 @@ const cardData = [
     desc: "Specialized property acquisition for Super Funds. Full compliance while maximizing long-term returns for your retirement portfolio.",
     image: smsfImg,
     tag: "Super Fund",
+  },
+  {
+    title: "Renovators & Flippers",
+    desc: "Find undervalued properties with strong renovation or flip potential. We source the deals others miss.",
+    image: renovationImg,
+    tag: "Value Add",
+  },
+  {
+    title: "Owner Occupiers",
+    desc: "Find and secure the right home without competing blind at auction. Expert advocacy on your side every step of the way.",
+    image: ownerImg,
+    tag: "Home Buyer",
+  },
+  {
+    title: "First Home Buyers",
+    desc: "Navigate your first purchase with expert guidance from day one. We simplify the complex so you buy with confidence.",
+    image: firstHomeImg,
+    tag: "First Purchase",
   },
 ];
 

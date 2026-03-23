@@ -54,7 +54,7 @@ const LeadMagnet = ({ openLeadModal }) => {
           <div className="lm-grid">
             {/* ── LEFT: Content + Inline Form ── */}
             <div className="lm-left rvl">
-              <div className="eyebrow">Free Download</div>
+              <div className="eyebrow">Get it Free</div>
               <AnimatedText
                 className="lm-h2"
                 textParts={[
@@ -138,7 +138,7 @@ const LeadMagnet = ({ openLeadModal }) => {
                       cursor: "pointer",
                     }}
                   >
-                    Download Now — It's Free
+                    Grab Now — It's Free
                   </button>
                 </div>
               </div>

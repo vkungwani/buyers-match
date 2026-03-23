@@ -304,7 +304,7 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                   </svg>
                 </div>
                 <div className="text-[12.5px] text-white/65">
-                  Trusted by 200+ Australian families
+                  150+ transactions · $100M+ in property
                 </div>
               </div>
             </motion.div>
@@ -325,8 +325,10 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 className="w-full h-auto object-contain object-center block brightness-[1.05] contrast-[1.02] saturate-[1.02] transition-all duration-400"
                 style={{
                   filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.5))",
-                  WebkitMaskImage: "radial-gradient(ellipse 55% 75% at 50% 25%, black 40%, transparent 100%)",
-                  maskImage: "radial-gradient(ellipse 55% 75% at 50% 25%, black 40%, transparent 100%)"
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 55% 75% at 50% 25%, black 40%, transparent 100%)",
+                  maskImage:
+                    "radial-gradient(ellipse 55% 75% at 50% 25%, black 40%, transparent 100%)",
                 }}
               />
 

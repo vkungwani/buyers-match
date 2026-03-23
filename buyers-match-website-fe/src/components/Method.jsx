@@ -329,7 +329,7 @@ const Method = ({ scrollToSection, openLeadModal }) => {
               onClick={openLeadModal}
               className="inline-flex items-center gap-2 font-['DM_Sans',system-ui,sans-serif] font-bold rounded-[10px] cursor-pointer transition-all duration-200 ease-in-out bg-[#2ABFBF] text-[#1B2A4A] px-[20px] sm:px-[34px] py-[14px] sm:py-[16px] text-[13px] sm:text-[15px] hover:bg-[#1E9898] hover:text-white hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(42,191,191,0.35)] border-none text-center"
             >
-              Download the Free 4M Framework Guide →
+              Grab a free copy of 4M Framework Guide →
             </button>
           </div>
         </div>

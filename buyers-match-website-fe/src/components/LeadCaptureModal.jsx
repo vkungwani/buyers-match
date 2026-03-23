@@ -183,7 +183,7 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
                   marginBottom: "12px",
                 }}
               >
-                📥 Free Download
+                📥 Get Free
               </div>
               <h2
                 style={{
