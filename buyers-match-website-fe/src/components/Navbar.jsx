@@ -360,6 +360,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
               <UserIcon className="w-3.5 h-3.5 text-[#2ABFBF] group-hover:scale-110 transition-transform" />
               Client Portal
             </a>
+
             <Link
               to="/cashflow-calculator"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-white text-[12px] font-bold rounded-lg hover:border-[#2ABFBF]/50 hover:bg-white/10 transition-all duration-300 group shadow-lg shadow-black/20"
