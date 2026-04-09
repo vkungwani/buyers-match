@@ -1,0 +1,1128 @@
+/* ── Page-scoped variables (.calc-page wrapper) ──────────────────────────── */
+.calc-page {
+  --calc-navy:      #1B2A4A;
+  --calc-teal:      #2ABFBF;
+  --calc-gold:      #D4A843;
+}
+
+/* ── CSS Variables ───────────────────────────────────────────────────────── */
+:root {
+  --calc-navy:         #1B2A4A;
+  --calc-navy-mid:     #22345A;
+  --calc-navy-light:   #2D3E5E;
+  --calc-navy-muted:   #364A6E;
+  --calc-teal:         #2ABFBF;
+  --calc-teal-dark:    #1E9898;
+  --calc-teal-alpha:   rgba(42, 191, 191, 0.12);
+  --calc-teal-border:  rgba(42, 191, 191, 0.25);
+  --calc-gold:         #D4A843;
+  --calc-gold-alpha:   rgba(212, 168, 67, 0.12);
+  --calc-border:       rgba(0, 0, 0, 0.09);
+  --calc-border-light: rgba(0, 0, 0, 0.055);
+  --calc-bg-field:     #FAFAFA;
+  --calc-bg-grid:      rgba(0, 0, 0, 0.06);
+  --calc-text:         #1B2A4A;
+  --calc-text-mid:     #4A5568;
+  --calc-text-muted:   #8A97A8;
+  --calc-text-hint:    #A0ABBB;
+  --calc-green:        #1C8A50;
+  --calc-red:          #D94F4F;
+}
+
+/* ── Input Field Grid Components (cfc- prefix) ───────────────────────────── */
+
+/* Grid wrappers — gap acts as 1px cell separator */
+.cfc-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--calc-bg-grid);
+}
+
+.cfc-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--calc-bg-grid);
+}
+
+/* Individual field cell */
+.cfc-field {
+  background: #fff;
+  padding: 13px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cfc-field.full {
+  grid-column: 1 / -1;
+}
+
+/* Label above input */
+.cfc-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--calc-text-muted);
+}
+
+/* Hint / note below input */
+.cfc-note {
+  font-size: 10px;
+  color: var(--calc-text-hint);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.cfc-note.teal {
+  color: var(--calc-teal-dark);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ── Input group: prefix + input ─────────────────────────────────────────── */
+.cfc-input-group {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--calc-border);
+  border-radius: 9px;
+  background: var(--calc-bg-field);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.cfc-input-group:focus-within {
+  border-color: var(--calc-teal);
+  box-shadow: 0 0 0 3px var(--calc-teal-alpha);
+  background: #fff;
+}
+
+.cfc-input-group.readonly {
+  background: rgba(27, 42, 74, 0.03);
+  border-color: rgba(0, 0, 0, 0.07);
+  cursor: default;
+}
+
+.cfc-addon {
+  padding: 0 8px 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--calc-text-hint);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.cfc-addon.suffix {
+  padding: 0 10px 0 4px;
+}
+
+.cfc-input {
+  border: none;
+  outline: none;
+  padding: 9px 10px 9px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--calc-navy);
+  background: transparent;
+  width: 100%;
+  min-width: 0;
+  -moz-appearance: textfield;
+}
+
+.cfc-input::-webkit-outer-spin-button,
+.cfc-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.cfc-input.readonly {
+  cursor: default;
+  color: var(--calc-text-mid);
+  font-weight: 600;
+}
+
+/* ── Select ──────────────────────────────────────────────────────────────── */
+.cfc-select {
+  width: 100%;
+  border: 1.5px solid var(--calc-border);
+  border-radius: 9px;
+  padding: 9px 32px 9px 11px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--calc-navy);
+  background: var(--calc-bg-field);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238A97A8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+}
+
+.cfc-select:focus {
+  border-color: var(--calc-teal);
+  box-shadow: 0 0 0 3px var(--calc-teal-alpha);
+  background-color: #fff;
+}
+
+/* ── Buyer-type / generic toggle ─────────────────────────────────────────── */
+.cfc-toggle-group {
+  display: flex;
+  border: 1.5px solid var(--calc-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--calc-bg-field);
+}
+
+.cfc-toggle-btn {
+  flex: 1;
+  padding: 9px 6px;
+  border: none;
+  border-right: 1px solid var(--calc-border);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--calc-text-muted);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.cfc-toggle-btn:last-child {
+  border-right: none;
+}
+
+.cfc-toggle-btn:hover:not(.active) {
+  background: rgba(42, 191, 191, 0.06);
+  color: var(--calc-teal-dark);
+}
+
+.cfc-toggle-btn.active {
+  background: var(--calc-teal);
+  color: var(--calc-navy);
+}
+
+/* ── Stamp duty display ──────────────────────────────────────────────────── */
+.cfc-stamp-display {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(27, 42, 74, 0.03);
+  border: 1.5px solid rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cfc-stamp-amount {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--calc-navy);
+}
+
+.cfc-stamp-note {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--calc-teal-dark);
+  background: var(--calc-teal-alpha);
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ── LMI tier pills ──────────────────────────────────────────────────────── */
+.cfc-lmi-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.cfc-lmi-pill {
+  flex: 1;
+  padding: 8px 6px;
+  border-radius: 10px;
+  border: 1.5px solid var(--calc-border);
+  background: var(--calc-bg-field);
+  font-size: 10px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--calc-text-hint);
+  line-height: 1.4;
+  transition: all 0.2s;
+}
+
+.cfc-lmi-pill.active {
+  border-color: var(--calc-teal);
+  background: var(--calc-teal-alpha);
+  color: var(--calc-teal-dark);
+}
+
+/* ── Checkbox row ────────────────────────────────────────────────────────── */
+.cfc-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  cursor: pointer;
+}
+
+.cfc-checkbox-row input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  accent-color: var(--calc-teal);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cfc-checkbox-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--calc-text-mid);
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+/* ── Loan breakdown panel ────────────────────────────────────────────────── */
+.cfc-breakdown {
+  border-radius: 12px;
+  border: 1px solid var(--calc-border-light);
+  overflow: hidden;
+  background: rgba(27, 42, 74, 0.02);
+}
+
+.cfc-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 12.5px;
+}
+
+.cfc-breakdown-row:last-child {
+  border-bottom: none;
+  background: rgba(27, 42, 74, 0.04);
+}
+
+.cfc-breakdown-lbl {
+  color: var(--calc-text-muted);
+  font-weight: 600;
+}
+
+.cfc-breakdown-val {
+  font-weight: 800;
+  color: var(--calc-navy);
+}
+
+.cfc-breakdown-val.teal {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  color: var(--calc-teal);
+}
+
+/* ── Card header variants ────────────────────────────────────────────────── */
+
+/* Primary: full dark navy, teal top-accent, more prominent shadow */
+.cfc-card-primary {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 28px rgba(27, 42, 74, 0.1);
+  position: relative;
+}
+
+.cfc-card-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--calc-teal), var(--calc-teal-dark));
+  z-index: 1;
+}
+
+.cfc-header-primary {
+  background: linear-gradient(135deg, var(--calc-navy) 0%, var(--calc-navy-mid) 100%);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cfc-header-primary::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(42, 191, 191, 0.05);
+  pointer-events: none;
+}
+
+.cfc-header-primary-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: rgba(42, 191, 191, 0.15);
+  border: 1px solid rgba(42, 191, 191, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cfc-header-primary-title {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.cfc-header-primary-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+/* Secondary (defocused): lighter navy, smaller text */
+.cfc-card-secondary {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(27, 42, 74, 0.05);
+}
+
+.cfc-header-secondary {
+  background: linear-gradient(135deg, var(--calc-navy-light) 0%, var(--calc-navy-muted) 100%);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cfc-header-secondary-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cfc-header-secondary-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cfc-header-secondary-sub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 1px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .cfc-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .cfc-grid-2,
+  .cfc-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .cfc-field.full {
+    grid-column: 1;
+  }
+}
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.calc-layout {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calc-results-col {
+  position: sticky;
+  top: 96px;
+  align-self: flex-start;
+}
+
+@media (max-width: 1100px) {
+  .calc-layout {
+    grid-template-columns: 1fr;
+  }
+  .calc-results-col {
+    position: static;
+    order: -1;
+  }
+}
+
+/* ── Section Cards ───────────────────────────────────────────────────────── */
+.calc-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(27, 42, 74, 0.05);
+}
+
+.calc-card-header {
+  background: linear-gradient(135deg, #1B2A4A 0%, #22345A 100%);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calc-card-header-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(42, 191, 191, 0.15);
+  border: 1px solid rgba(42, 191, 191, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.calc-card-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.calc-card-subtitle {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 1px;
+}
+
+.calc-card-body {
+  padding: 6px 22px 18px;
+}
+
+/* ── Input Rows ──────────────────────────────────────────────────────────── */
+.calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+  gap: 12px;
+}
+
+.calc-row:last-child {
+  border-bottom: none;
+}
+
+.calc-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4A5568;
+  flex-shrink: 0;
+}
+
+.calc-label-hint {
+  font-size: 11px;
+  color: #A0ABBB;
+  margin-top: 1px;
+}
+
+.calc-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calc-prefix {
+  font-size: 13px;
+  font-weight: 600;
+  color: #A0ABBB;
+  line-height: 1;
+}
+
+.calc-input {
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1B2A4A;
+  text-align: right;
+  width: 130px;
+  background: #FAFAFA;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield;
+}
+
+.calc-input::-webkit-outer-spin-button,
+.calc-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.calc-input:focus {
+  border-color: #2ABFBF;
+  box-shadow: 0 0 0 3px rgba(42, 191, 191, 0.12);
+  background: #fff;
+}
+
+.calc-input-sm {
+  width: 90px;
+}
+
+.calc-select {
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1B2A4A;
+  background: #FAFAFA;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.calc-select:focus {
+  border-color: #2ABFBF;
+  box-shadow: 0 0 0 3px rgba(42, 191, 191, 0.12);
+}
+
+/* ── Slider ──────────────────────────────────────────────────────────────── */
+.calc-slider-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.calc-slider {
+  -webkit-appearance: none;
+  width: 160px;
+  height: 4px;
+  border-radius: 4px;
+  background: #E8ECF2;
+  outline: none;
+  cursor: pointer;
+}
+
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2ABFBF;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(42, 191, 191, 0.5);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.calc-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2ABFBF;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(42, 191, 191, 0.5);
+  cursor: pointer;
+}
+
+/* ── Segmented Controls ──────────────────────────────────────────────────── */
+.calc-segment-group {
+  display: flex;
+  gap: 4px;
+  background: #F0F2F5;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.calc-segment-btn {
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #8A97A8;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.calc-segment-btn.active {
+  background: #1B2A4A;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(27, 42, 74, 0.25);
+}
+
+/* ── Info Pills ──────────────────────────────────────────────────────────── */
+.calc-info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(42, 191, 191, 0.08);
+  color: #1E9898;
+  border: 1px solid rgba(42, 191, 191, 0.2);
+}
+
+.calc-info-pill.gold {
+  background: rgba(212, 168, 67, 0.1);
+  color: #8A6A10;
+  border-color: rgba(212, 168, 67, 0.25);
+}
+
+/* ── Section Totals ──────────────────────────────────────────────────────── */
+.calc-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin-top: 12px;
+  border-radius: 12px;
+  background: rgba(27, 42, 74, 0.04);
+  border: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.calc-total-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8A97A8;
+}
+
+.calc-total-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #1B2A4A;
+}
+
+/* ── Results Panel ───────────────────────────────────────────────────────── */
+.calc-results-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(27, 42, 74, 0.08);
+}
+
+.calc-results-header {
+  background: linear-gradient(135deg, #1B2A4A 0%, #22345A 100%);
+  padding: 18px 22px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-cashflow-main {
+  padding: 20px 22px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.calc-cashflow-weekly {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+
+.calc-cashflow-weekly.positive { color: #1C8A50; }
+.calc-cashflow-weekly.negative { color: #D94F4F; }
+.calc-cashflow-weekly.neutral  { color: #8A97A8; }
+
+.calc-gearing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+.calc-gearing-badge.positive {
+  background: rgba(28, 138, 80, 0.1);
+  color: #1C8A50;
+  border: 1px solid rgba(28, 138, 80, 0.2);
+}
+
+.calc-gearing-badge.negative {
+  background: rgba(217, 79, 79, 0.1);
+  color: #D94F4F;
+  border: 1px solid rgba(217, 79, 79, 0.2);
+}
+
+.calc-cf-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 14px;
+}
+
+.calc-cf-item {
+  text-align: center;
+}
+
+.calc-cf-item-val {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.calc-cf-item-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A0ABBB;
+  margin-top: 2px;
+}
+
+/* ── Yield Metrics Grid ──────────────────────────────────────────────────── */
+.calc-yield-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.calc-yield-cell {
+  background: #F7F5F0;
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.calc-yield-cell:hover {
+  border-color: rgba(42, 191, 191, 0.2);
+}
+
+.calc-yield-val {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #1E9898;
+}
+
+.calc-yield-lbl {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A0ABBB;
+  margin-top: 3px;
+}
+
+/* ── Results Summary Rows ────────────────────────────────────────────────── */
+.calc-summary-rows {
+  padding: 14px 22px 18px;
+}
+
+.calc-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.calc-summary-row:last-child {
+  border-bottom: none;
+}
+
+.calc-summary-lbl {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #8A97A8;
+}
+
+.calc-summary-val {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #1B2A4A;
+}
+
+/* ── Projection Table ────────────────────────────────────────────────────── */
+.calc-table-wrap {
+  margin-top: 28px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(27, 42, 74, 0.05);
+}
+
+.calc-table-header {
+  background: linear-gradient(135deg, #1B2A4A 0%, #22345A 100%);
+  padding: 18px 24px;
+}
+
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calc-table thead th {
+  background: rgba(42, 191, 191, 0.08);
+  padding: 11px 16px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1B2A4A;
+  text-align: right;
+  border-bottom: 2px solid rgba(42, 191, 191, 0.15);
+  white-space: nowrap;
+}
+
+.calc-table thead th:first-child {
+  text-align: left;
+}
+
+.calc-table tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
+  transition: background 0.15s;
+}
+
+.calc-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.calc-table tbody tr:hover {
+  background: rgba(42, 191, 191, 0.03);
+}
+
+.calc-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.012);
+}
+
+.calc-table tbody tr:nth-child(even):hover {
+  background: rgba(42, 191, 191, 0.04);
+}
+
+.calc-table td {
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3D4F6A;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.calc-table td:first-child {
+  text-align: left;
+  font-weight: 800;
+  color: #1B2A4A;
+}
+
+.calc-table td.positive { color: #1C8A50; font-weight: 800; }
+.calc-table td.negative { color: #D94F4F; font-weight: 800; }
+
+/* ── CTA ─────────────────────────────────────────────────────────────────── */
+.calc-cta {
+  margin-top: 36px;
+  background: linear-gradient(135deg, #1B2A4A 0%, #22345A 100%);
+  border-radius: 20px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.calc-cta::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(42, 191, 191, 0.06);
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .calc-cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+  }
+
+  .calc-table {
+    font-size: 11px;
+  }
+
+  .calc-table td,
+  .calc-table thead th {
+    padding: 9px 10px;
+  }
+
+  .calc-cashflow-weekly {
+    font-size: 40px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ADDITIONS — card variants, input prefix/suffix, results aliases, utilities
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── calc-card-header modifiers ──────────────────────────────────────────── */
+
+/* Primary: slightly larger title + teal left accent bar */
+.calc-card-header.primary {
+  border-left: 3px solid var(--calc-teal, #2ABFBF);
+  padding-left: 19px;
+}
+
+.calc-card-header.primary .calc-card-title {
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+}
+
+/* Secondary: lighter/muted header for supporting cards */
+.calc-card-header.secondary {
+  background: linear-gradient(135deg, #2D3E5E 0%, #374E70 100%);
+  padding: 12px 20px;
+}
+
+.calc-card-header.secondary .calc-card-title {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.13em;
+}
+
+.calc-card-header.secondary .calc-card-subtitle {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.calc-card-header.secondary .calc-card-header-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Input prefix / suffix (positioned inside a wrapper) ─────────────────── */
+.calc-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.calc-input-prefix {
+  position: absolute;
+  left: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--calc-text-hint, #A0ABBB);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+.calc-input-suffix {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--calc-text-hint, #A0ABBB);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+/* When a prefix/suffix is present, add padding so text doesn't overlap */
+.calc-input.has-prefix  { padding-left: 24px;  }
+.calc-input.has-suffix  { padding-right: 24px; }
+
+/* ── Results panel semantic aliases ──────────────────────────────────────── */
+.results-panel {
+  background: #1B2A4A;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.35);
+  position: sticky;
+  top: 96px;
+  align-self: flex-start;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(42, 191, 191, 0.25) transparent;
+}
+
+.results-panel::-webkit-scrollbar        { width: 4px; }
+.results-panel::-webkit-scrollbar-track  { background: transparent; }
+.results-panel::-webkit-scrollbar-thumb  { background: rgba(42, 191, 191, 0.25); border-radius: 2px; }
+
+.results-section {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.results-section:last-child {
+  border-bottom: none;
+}
+
+/* ── Utility: positive / negative / neutral values ───────────────────────── */
+.pos     { color: #4ADE80 !important; }
+.neg     { color: #F87171 !important; }
+.neutral { color: rgba(255, 255, 255, 0.55) !important; }

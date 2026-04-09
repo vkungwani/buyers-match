@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { siteData } from "../config/siteData";
-import logo from "../assets/bm-logo-white-text-1B2A4A.jpg";
+import logo from "../assets/bm-logo-white-text.JPG";
 import {
   MailIcon,
   PhoneIcon,
@@ -35,6 +35,22 @@ const CalculatorIcon = ({ className, style }) => (
     <path d="M8 14h.01" />
     <path d="M12 18h.01" />
     <path d="M8 18h.01" />
+  </svg>
+);
+
+const UserIcon = ({ className, style }) => (
+  <svg
+    className={className}
+    style={style}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
   </svg>
 );
 
@@ -293,10 +309,23 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
                   </div>
 
                   <div className="grid grid-cols-1 gap-2.5 pt-1">
-                    <button className="w-full bg-white/5 text-white py-2.5 rounded-lg font-bold text-[11px] uppercase tracking-[0.15em] border border-white/10 hover:border-[#2ABFBF]/40 transition-all flex items-center justify-center gap-2">
+                    <a
+                      href="https://clientportal.buyersmatch.com.au"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-white/5 text-white py-2.5 rounded-lg font-bold text-[11px] uppercase tracking-[0.15em] border border-[#2ABFBF]/30 hover:bg-[#2ABFBF]/5 transition-all flex items-center justify-center gap-2"
+                    >
+                      <UserIcon className="w-3.5 h-3.5 text-[#2ABFBF]" />
+                      Client Portal
+                    </a>
+                    <Link
+                      to="/cashflow-calculator"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="w-full bg-white/5 text-white py-2.5 rounded-lg font-bold text-[11px] uppercase tracking-[0.15em] border border-white/10 hover:border-[#2ABFBF]/40 transition-all flex items-center justify-center gap-2"
+                    >
                       <CalculatorIcon className="w-3.5 h-3.5 text-[#2ABFBF]" />
                       Cashflow Calculator
-                    </button>
+                    </Link>
                     <button
                       onClick={(e) => {
                         openCalendly(e);
@@ -322,10 +351,22 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
 
           {/* Desktop Right */}
           <div className="hidden lg:flex items-center gap-2.5">
-            <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-white text-[12px] font-bold rounded-lg hover:border-[#2ABFBF]/50 hover:bg-white/10 transition-all duration-300 group shadow-lg shadow-black/20">
+            <a
+              href="https://clientportal.buyersmatch.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-transparent border border-[#2ABFBF]/40 text-white text-[12px] font-bold rounded-lg hover:bg-[#2ABFBF]/10 hover:border-[#2ABFBF] transition-all duration-300 group shadow-lg shadow-black/10"
+            >
+              <UserIcon className="w-3.5 h-3.5 text-[#2ABFBF] group-hover:scale-110 transition-transform" />
+              Client Portal
+            </a>
+            <Link
+              to="/cashflow-calculator"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/5 border border-white/10 text-white text-[12px] font-bold rounded-lg hover:border-[#2ABFBF]/50 hover:bg-white/10 transition-all duration-300 group shadow-lg shadow-black/20"
+            >
               <CalculatorIcon className="w-3.5 h-3.5 text-[#2ABFBF] group-hover:scale-110 transition-transform" />
               Cashflow Calculator
-            </button>
+            </Link>
             <button
               onClick={openCalendly}
               className="inline-flex items-center px-5 py-2.5 bg-[#2ABFBF] text-[#1B2A4A] text-[13px] font-bold rounded-lg hover:bg-[#1E9898] hover:text-white transition-all duration-200 shadow-[0_8px_24px_rgba(42,191,191,0.35)]"

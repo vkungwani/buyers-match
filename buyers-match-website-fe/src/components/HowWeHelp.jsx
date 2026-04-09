@@ -168,10 +168,10 @@ const HowWeHelp = () => {
                 className="hwh-chevron"
                 style={{
                   padding: "11px 6px",
-                  background: "rgba(42,191,191,.08)",
+                  background: "rgba(59,91,165,.08)",
                   display: "flex",
                   alignItems: "center",
-                  color: "var(--teal-d)",
+                  color: "#3B5BA5",
                   fontSize: "14px",
                   fontWeight: "900",
                 }}
@@ -181,10 +181,10 @@ const HowWeHelp = () => {
               <div
                 style={{
                   padding: "11px 28px",
-                  background: "var(--teal)",
+                  background: "rgba(59,91,165,.18)",
                   fontSize: "11px",
                   fontWeight: "800",
-                  color: "var(--navy)",
+                  color: "#2c408a",
                   letterSpacing: ".1em",
                   textTransform: "uppercase",
                   display: "flex",
@@ -196,13 +196,13 @@ const HowWeHelp = () => {
                   style={{
                     width: "20px",
                     height: "20px",
-                    background: "var(--navy)",
+                    background: "#3B5BA5",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "9px",
-                    color: "var(--teal)",
+                    color: "#fff",
                     fontWeight: "900",
                     flexShrink: "0",
                   }}
@@ -215,10 +215,10 @@ const HowWeHelp = () => {
                 className="hwh-chevron"
                 style={{
                   padding: "11px 6px",
-                  background: "rgba(212,168,67,.08)",
+                  background: "rgba(34,166,109,.08)",
                   display: "flex",
                   alignItems: "center",
-                  color: "var(--gold)",
+                  color: "#22A66D",
                   fontSize: "14px",
                   fontWeight: "900",
                 }}
@@ -228,10 +228,10 @@ const HowWeHelp = () => {
               <div
                 style={{
                   padding: "11px 28px",
-                  background: "rgba(212,168,67,.1)",
+                  background: "rgba(34,166,109,.12)",
                   fontSize: "11px",
                   fontWeight: "800",
-                  color: "#8a6a10",
+                  color: "#176845",
                   letterSpacing: ".1em",
                   textTransform: "uppercase",
                   display: "flex",
@@ -244,13 +244,13 @@ const HowWeHelp = () => {
                   style={{
                     width: "20px",
                     height: "20px",
-                    background: "var(--gold)",
+                    background: "#22A66D",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "9px",
-                    color: "var(--navy)",
+                    color: "#fff",
                     fontWeight: "900",
                     flexShrink: "0",
                   }}
@@ -841,13 +841,13 @@ const HowWeHelp = () => {
               </div>
             </TiltCard>
 
-            {/* M3 */}
+            {/* M3 — Indigo */}
             <TiltCard
               variants={itemVariants}
               style={{
                 background: "var(--white)",
                 borderRadius: "24px",
-                border: "1.5px solid rgba(42,191,191,.2)",
+                border: "1.5px solid rgba(59,91,165,.3)",
                 display: "flex",
                 flexDirection: "column",
                 overflow: "hidden",
@@ -855,8 +855,7 @@ const HowWeHelp = () => {
             >
               <div
                 style={{
-                  background:
-                    "linear-gradient(135deg,var(--teal) 0%,var(--teal-d) 100%)",
+                  background: "linear-gradient(135deg,#3B5BA5 0%,#2c408a 100%)",
                   padding: "28px 26px 22px",
                   position: "relative",
                   overflow: "hidden",
@@ -957,8 +956,8 @@ const HowWeHelp = () => {
                     marginBottom: "18px",
                   }}
                 >
-                  We source on and off-market opportunities, then negotiate hard
-                  to secure the right property at the right price.
+                  Using deep agent relationships and rigorous price analysis, we
+                  give you access and an edge other buyers simply don't have."
                 </p>
                 <ul
                   style={{
@@ -985,8 +984,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(42,191,191,.15)",
-                        color: "var(--teal-d)",
+                        background: "rgba(59,91,165,.15)",
+                        color: "#2c408a",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1014,8 +1013,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(42,191,191,.15)",
-                        color: "var(--teal-d)",
+                        background: "rgba(59,91,165,.15)",
+                        color: "#2c408a",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1043,8 +1042,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(42,191,191,.15)",
-                        color: "var(--teal-d)",
+                        background: "rgba(59,91,165,.15)",
+                        color: "#2c408a",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1072,8 +1071,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(42,191,191,.15)",
-                        color: "var(--teal-d)",
+                        background: "rgba(59,91,165,.15)",
+                        color: "#2c408a",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1090,8 +1089,8 @@ const HowWeHelp = () => {
                 </ul>
                 <div
                   style={{
-                    background: "var(--teal-l)",
-                    borderLeft: "3px solid var(--teal)",
+                    background: "rgba(59,91,165,.08)",
+                    borderLeft: "3px solid #3B5BA5",
                     borderRadius: "0 8px 8px 0",
                     padding: "10px 14px",
                     fontSize: "12px",
@@ -1101,7 +1100,7 @@ const HowWeHelp = () => {
                 >
                   <span
                     style={{
-                      color: "var(--teal-d)",
+                      color: "#2c408a",
                       fontSize: "10px",
                       fontWeight: "800",
                       letterSpacing: ".08em",
@@ -1117,13 +1116,13 @@ const HowWeHelp = () => {
               </div>
             </TiltCard>
 
-            {/* M4 */}
+            {/* M4 — Emerald */}
             <TiltCard
               variants={itemVariants}
               style={{
                 background: "var(--white)",
                 borderRadius: "24px",
-                border: "1.5px solid rgba(212,168,67,.3)",
+                border: "1.5px solid rgba(34,166,109,.3)",
                 display: "flex",
                 flexDirection: "column",
                 overflow: "hidden",
@@ -1131,7 +1130,7 @@ const HowWeHelp = () => {
             >
               <div
                 style={{
-                  background: "linear-gradient(135deg,#D4A843 0%,#b88a2e 100%)",
+                  background: "linear-gradient(135deg,#22A66D 0%,#176845 100%)",
                   padding: "28px 26px 22px",
                   position: "relative",
                   overflow: "hidden",
@@ -1182,7 +1181,7 @@ const HowWeHelp = () => {
                       padding: "4px 10px",
                       fontSize: "10px",
                       fontWeight: "900",
-                      color: "var(--navy)",
+                      color: "#fff",
                       letterSpacing: ".12em",
                     }}
                   >
@@ -1193,7 +1192,7 @@ const HowWeHelp = () => {
                   style={{
                     fontSize: "10px",
                     fontWeight: "800",
-                    color: "rgba(27,42,74,.6)",
+                    color: "rgba(255,255,255,.7)",
                     letterSpacing: ".12em",
                     textTransform: "uppercase",
                     marginBottom: "4px",
@@ -1207,7 +1206,7 @@ const HowWeHelp = () => {
                     fontFamily: "var(--ff-h)",
                     fontSize: "19px",
                     fontWeight: "900",
-                    color: "var(--navy)",
+                    color: "#fff",
                     lineHeight: "1.2",
                     position: "relative",
                     whiteSpace: "nowrap",
@@ -1260,8 +1259,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(212,168,67,.15)",
-                        color: "#8a6a10",
+                        background: "rgba(34,166,109,.15)",
+                        color: "#176845",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1289,8 +1288,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(212,168,67,.15)",
-                        color: "#8a6a10",
+                        background: "rgba(34,166,109,.15)",
+                        color: "#176845",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1318,8 +1317,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(212,168,67,.15)",
-                        color: "#8a6a10",
+                        background: "rgba(34,166,109,.15)",
+                        color: "#176845",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1347,8 +1346,8 @@ const HowWeHelp = () => {
                         width: "18px",
                         height: "18px",
                         borderRadius: "50%",
-                        background: "rgba(212,168,67,.15)",
-                        color: "#8a6a10",
+                        background: "rgba(34,166,109,.15)",
+                        color: "#176845",
                         fontSize: "9px",
                         fontWeight: "900",
                         display: "flex",
@@ -1365,8 +1364,8 @@ const HowWeHelp = () => {
                 </ul>
                 <div
                   style={{
-                    background: "rgba(212,168,67,.1)",
-                    borderLeft: "3px solid var(--gold)",
+                    background: "rgba(34,166,109,.08)",
+                    borderLeft: "3px solid #22A66D",
                     borderRadius: "0 8px 8px 0",
                     padding: "10px 14px",
                     fontSize: "12px",
@@ -1376,7 +1375,7 @@ const HowWeHelp = () => {
                 >
                   <span
                     style={{
-                      color: "#8a6a10",
+                      color: "#176845",
                       fontSize: "10px",
                       fontWeight: "800",
                       letterSpacing: ".08em",
@@ -1387,7 +1386,8 @@ const HowWeHelp = () => {
                   >
                     Outcome
                   </span>
-                  Confidence the asset fits your portfolio strategy
+                  Confidence the asset fits & strengthens your long-term
+                  portfolio strategy
                 </div>
               </div>
             </TiltCard>

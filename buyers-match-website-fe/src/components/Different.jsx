@@ -28,10 +28,11 @@ const Different = () => {
             <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.15em] uppercase text-[#2ABFBF]/70 mb-4 before:content-[''] before:w-[22px] before:h-[2px] before:bg-[#2ABFBF] before:rounded-[2px] before:shrink-0">
               Our Edge
             </div>
-            <AnimatedText
-              className="font-['Playfair_Display',Georgia,serif] text-[clamp(28px,3.5vw,42px)] font-black text-white leading-[1.15] mb-4"
-              textParts={[{ text: "What Makes BuyersMatch " }, { text: "Different", em: true }]}
-            />
+            <h2 className="font-['Playfair_Display',Georgia,serif] text-[clamp(28px,3.5vw,42px)] font-black text-white leading-[1.15] mb-4">
+              <span className="block">What Makes</span>
+              <span className="block">BuyersMatch</span>
+              <em className="block not-italic text-[#2ABFBF]">Different</em>
+            </h2>
             <p className="text-[16px] text-white/60 leading-[1.75]">
               Most buyers agents find you a property.<br />
               We build you a <strong className="text-white">portfolio strategy first</strong> — then find the right property to match it.

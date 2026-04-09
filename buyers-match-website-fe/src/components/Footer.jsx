@@ -11,6 +11,7 @@ import {
   GoogleMapsLogo,
   GoogleBusinessIcon,
 } from "./SocialIcons";
+import { siteData } from "../config/siteData";
 
 const getSocialIcon = (name) => {
   switch (name.toLowerCase()) {
@@ -106,21 +107,29 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                   </svg>
                   info@buyersmatch.com.au
                 </a>
-                <div className="flex items-center gap-3 text-[13px] text-white/70">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  0488 847 018 · 019
+                <div className="space-y-3">
+                  {siteData.contact.phones.map((phone, i) => (
+                    <a
+                      key={i}
+                      href={`tel:+61${phone.replace(/[^0-9]/g, "")}`}
+                      className="flex items-center gap-3 text-[13px] text-white/70 hover:text-[#2ABFBF] transition-colors"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                      {phone}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -275,9 +284,12 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                 >
                   Free Strategy Call →
                 </button>
-                <button className="w-full bg-white/5 border border-white/10 text-white py-3 rounded-xl font-bold text-[13px] hover:bg-white/10 transition-all">
+                <Link 
+                  to="/cashflow-calculator"
+                  className="w-full bg-white/5 border border-white/10 text-white py-3 rounded-xl font-bold text-[13px] hover:bg-white/10 transition-all flex items-center justify-center"
+                >
                   Cashflow Calculator
-                </button>
+                </Link>
                 <div className="pt-4 grid grid-cols-5 gap-3">
                   {/* Social Brand Icons */}
                   {[

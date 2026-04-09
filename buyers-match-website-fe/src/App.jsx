@@ -32,6 +32,7 @@ import BlogsListPage from "./pages/BlogsListPage";
 import CaseStudiesPage from "./pages/CaseStudiesPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import CashflowCalculator from "./pages/cashflow-calculator";
 
 function App() {
   const navigate = useNavigate();
@@ -111,6 +112,7 @@ Method,HowWeHelp, Results, Testimonials
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/cashflow-calculator" element={<CashflowCalculator />} />
       </Routes>
       <PopupModal
         url={siteData.contact.calendly}

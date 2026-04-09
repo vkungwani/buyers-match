@@ -106,7 +106,7 @@ const Process = () => {
           </div>
 
           {/* Panel */}
-          <div className="bg-[#1B2A4A] rounded-[20px] p-[24px_20px] md:p-[38px_34px] md:sticky top-[86px] overflow-hidden relative border border-[rgba(42,191,191,.12)] md:-mt-10 lg:-mt-14">
+          <div className="bg-[#1B2A4A] rounded-[20px] p-[24px_20px] md:p-[38px_34px] md:sticky top-[86px] overflow-hidden relative border border-[rgba(42,191,191,.12)] md:mt-1 lg:mt-2">
             {/* Grid BG */}
             <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(42,191,191,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(42,191,191,.05)_1px,transparent_1px)] bg-[length:38px_38px]" />
             <div className="relative z-[1]">
