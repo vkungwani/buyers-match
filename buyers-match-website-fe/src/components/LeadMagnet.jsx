@@ -1,50 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import AnimatedText from "./AnimatedText";
 
 const LeadMagnet = ({ openLeadModal }) => {
-  const [form, setForm] = useState({ name: "", email: "", mobileNumber: "" });
-  const [loading, setLoading] = useState(false);
-  const [downloaded, setDownloaded] = useState(false);
-
-  const isValid =
-    form.name.trim().length > 1 &&
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) &&
-    /^[0-9+\-\s()]{7,15}$/.test(form.mobileNumber);
-
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleDownload = async () => {
-    if (!isValid) return;
-    setLoading(true);
-    try {
-      await fetch("http://localhost:8080/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          source: "Website - 4M Guide Section",
-          category: "Lead Magnet",
-          quality: "New",
-          remark: "Downloaded 4M Framework Guide from LeadMagnet section.",
-        }),
-      });
-    } catch (e) {
-      // allow download even if backend is offline
-    } finally {
-      setLoading(false);
-    }
-
-    const link = document.createElement("a");
-    link.href = "/BuyersMatch_4M_Guide.pdf";
-    link.download = "BuyersMatch_4M_Guide.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setDownloaded(true);
-  };
-
   return (
     <>
       <section id="leadmagnet">

@@ -63,21 +63,27 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
 
     setLoading(true);
     try {
-      // Save lead to backend
-      await fetch("http://localhost:8080/api/leads", {
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbzPtnoB8A83r6DS032yEtv_q1bXHDB9sgtBLKVrbZaphW0WmZuATvPN0U_UtLdebr0R/exec";
+
+      const data = {
+        timestamp: new Date().toLocaleString(),
+        name: form.name,
+        email: form.email,
+        mobile: form.mobileNumber,
+      };
+
+      // Submit to Google Sheets (using no-cors as Google Scripts redirects often cause CORS issues)
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          source: "Website - 4M Guide Download",
-          category: "Lead Magnet",
-          quality: "New",
-          remark: "Downloaded 4M Framework Guide from website.",
-        }),
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: JSON.stringify(data),
       });
     } catch (err) {
-      // Backend might not be running locally — still allow download
-      console.warn("Failed to save lead:", err);
+      console.warn("Lead Magnet Submission Error:", err);
     } finally {
       setLoading(false);
     }
