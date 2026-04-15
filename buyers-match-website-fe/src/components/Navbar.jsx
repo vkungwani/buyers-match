@@ -309,7 +309,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
                   </div>
 
                   <div className="grid grid-cols-1 gap-2.5 pt-1">
-                    <a
+                    {/* <a
                       href="https://clientportal.buyersmatch.com.au"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -317,7 +317,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
                     >
                       <UserIcon className="w-3.5 h-3.5 text-[#2ABFBF]" />
                       Client Portal
-                    </a>
+                    </a> */}
                     <Link
                       to="/cashflow-calculator"
                       onClick={() => setIsMobileMenuOpen(false)}
@@ -351,7 +351,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
 
           {/* Desktop Right */}
           <div className="hidden lg:flex items-center gap-2.5">
-            <a
+            {/* <a
               href="https://clientportal.buyersmatch.com.au"
               target="_blank"
               rel="noopener noreferrer"
@@ -359,7 +359,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
             >
               <UserIcon className="w-3.5 h-3.5 text-[#2ABFBF] group-hover:scale-110 transition-transform" />
               Client Portal
-            </a>
+            </a> */}
 
             <Link
               to="/cashflow-calculator"

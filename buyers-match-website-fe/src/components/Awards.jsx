@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import AnimatedText from "./AnimatedText";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, StaggerContainer, itemVariants } from "./Animations";
 import award1 from "../assets/award1_low.webp";
 import award2 from "../assets/award2.jpeg";
@@ -51,6 +51,18 @@ const shimmerKeyframes = `
 `;
 
 const Awards = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openLightbox = (img) => {
+    setSelectedImage(img);
+    // Prevent scrolling when lightbox is open
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = "unset";
+  };
   return (
     <section
       id="awards"
@@ -98,7 +110,10 @@ const Awards = () => {
                 />
 
                 {/* The Image Wrapper (for shimmer masking) */}
-                <div className="relative z-10 rounded-[16px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,.15)] group-hover:shadow-[0_30px_60px_rgba(0,0,0,.25)] transition-shadow duration-[400ms]">
+                <div
+                  className="relative z-10 rounded-[16px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,.15)] group-hover:shadow-[0_30px_60px_rgba(0,0,0,.25)] transition-shadow duration-[400ms] cursor-pointer"
+                  onClick={() => openLightbox(award.img)}
+                >
                   {/* Image */}
                   <img
                     src={award.img}
@@ -111,6 +126,28 @@ const Awards = () => {
                     className="absolute top-0 bottom-0 left-0 w-[50%] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 pointer-events-none"
                     style={{ animation: "shimmerAcross 3s infinite" }}
                   />
+
+                  {/* Look closer hint */}
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="px-4 py-2 rounded-full border border-white/50 bg-white/10 backdrop-blur-md text-white text-[12px] font-bold uppercase tracking-widest flex items-center gap-2">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="11" y1="8" x2="11" y2="14" />
+                        <line x1="8" y1="11" x2="14" y2="11" />
+                      </svg>
+                      View Full
+                    </div>
+                  </div>
 
                   {/* Persistent subtle inner border for premium feel */}
                   <div className="absolute inset-0 border border-white/20 rounded-[16px] pointer-events-none" />
@@ -160,6 +197,60 @@ const Awards = () => {
           ))}
         </StaggerContainer>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeLightbox}
+            className="fixed inset-0 z-[9999] bg-[#0A1224]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeLightbox}
+                className="absolute -top-12 sm:top-0 sm:-right-16 text-white/50 hover:text-white transition-colors p-2"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+
+              {/* Full Image */}
+              <img
+                src={selectedImage}
+                alt="Award Full View"
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              />
+
+              {/* Helper text */}
+              <div className="mt-4 text-white/40 text-[12px] font-bold uppercase tracking-[0.2em] animate-pulse">
+                Click anywhere to close
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

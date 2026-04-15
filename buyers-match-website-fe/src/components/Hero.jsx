@@ -262,7 +262,7 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 onClick={(e) => handleNavClick(e, "results")}
                 className="inline-flex items-center justify-center px-7 bg-white/5 backdrop-blur-[10px] border border-white/15 text-white font-bold rounded-full transition-all hover:bg-white/15 hover:border-white/30 hover:-translate-y-0.5 text-[13.5px]"
               >
-                See Recent Purchases
+                See Our Success Stories
               </a>
             </motion.div>
 
@@ -304,7 +304,7 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                   </svg>
                 </div>
                 <div className="text-[12.5px] text-white/65">
-                  150+ transactions · $100M+ in property
+                  160+ transactions · $100M+ in property
                 </div>
               </div>
             </motion.div>
@@ -343,14 +343,20 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 </div>
                 <div>
                   <div className="font-bold text-[12.5px] text-white">
-                    Sarah &amp; Michael K.
+                    Joshua Cooper
                   </div>
-                  <div className="text-[10px] text-[#2ABFBF] mb-1 tracking-[0.04em]">
-                    Sydney · Dual Income Investors
-                  </div>
+                  {/* <div className="text-[10px] text-[#2ABFBF] mb-1 tracking-[0.04em]">
+                    Melbourne · Interstate Investor · 4 reviews
+                  </div> */}
                   <div className="text-[11.5px] text-white/65 leading-[1.5]">
-                    "22% growth in 18 months. Puja found a suburb we'd never
-                    have found on our own."
+                    "Puja and Vish were great throughout their entire dealings
+                    securing a Melbourne investment property for an interstate
+                    buyer. Accommodating with their time, very thorough and well
+                    explained. With swift negotiation buyers match landed us a
+                    deal under market value with an extended settlement. As a
+                    first timer using a buyers advocate they gave us lots of
+                    confidence and guided us through each stage of our purchase.
+                    Would recommend to anyone."
                   </div>
                   <div className="flex text-[#D4A843] text-[10px] mt-1 tracking-[1.5px]">
                     <svg width="68" height="12" viewBox="0 0 68 12" fill="none">

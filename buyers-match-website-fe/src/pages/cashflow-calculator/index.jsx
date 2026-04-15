@@ -19,7 +19,7 @@ import './styles/calculator.css';
 
 // ── CashflowCalculator ────────────────────────────────────────────────────────
 
-const CashflowCalculator = () => {
+const CashflowCalculator = ({ openLeadModal, openCalendly }) => {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState(DEFAULT_INPUTS);
 
@@ -65,7 +65,6 @@ const CashflowCalculator = () => {
 
   // ── Navigation helpers ─────────────────────────────────────────────────────
   const scrollToSection = (id) => navigate(`/#${id}`);
-  const openCalendly    = () => window.open(siteData.contact.calendly, '_blank');
 
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
@@ -77,7 +76,7 @@ const CashflowCalculator = () => {
       ══════════════════════════════════════════════════════════════════════ */}
       <section style={{
         background:    'linear-gradient(135deg, #1B2A4A 0%, #22345A 100%)',
-        paddingTop:    110,
+        paddingTop:    48,
         paddingBottom: 52,
         position:      'relative',
         overflow:      'hidden',
@@ -216,7 +215,7 @@ const CashflowCalculator = () => {
         </div>
       </main>
 
-      <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} />
+      <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} openLeadModal={openLeadModal} />
     </div>
   );
 };

@@ -241,7 +241,7 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                     Blog
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="#"
                     className="text-white/50 hover:text-white transition-colors text-[13px] flex items-center gap-1.5"
@@ -261,7 +261,7 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                       ></path>
                     </svg>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -284,7 +284,7 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
                 >
                   Free Strategy Call →
                 </button>
-                <Link 
+                <Link
                   to="/cashflow-calculator"
                   className="w-full bg-white/5 border border-white/10 text-white py-3 rounded-xl font-bold text-[13px] hover:bg-white/10 transition-all flex items-center justify-center"
                 >
@@ -321,7 +321,9 @@ const Footer = ({ scrollToSection, openCalendly, openLeadModal }) => {
           </div>
 
           <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[12px] text-white/30">
-            <p>© 2025 BuyersMatch Buyers Advocacy Pty Ltd.</p>
+            <p>
+              © {new Date().getFullYear()} BuyersMatch Buyers Advocacy Pty Ltd.
+            </p>
             <div className="flex gap-4 md:gap-8 flex-wrap justify-center">
               <Link
                 to="/privacy-policy"

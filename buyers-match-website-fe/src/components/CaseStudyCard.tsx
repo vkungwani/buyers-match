@@ -17,10 +17,10 @@ const stateEmoji = (state: string) => {
 
 const saleTypeColor = (type: string) => {
   switch (type?.toLowerCase()) {
-    case 'auction':      return { bg: 'rgba(212,168,67,.12)',  text: '#8A6A10', dot: '#D4A843' };
-    case 'private sale': return { bg: 'rgba(42,191,191,.12)',  text: '#1E9898', dot: '#2ABFBF' };
-    case 'off market':   return { bg: 'rgba(107,63,160,.12)',  text: '#6B3FA0', dot: '#9B6FD0' };
-    default:             return { bg: 'rgba(42,191,191,.12)',  text: '#1E9898', dot: '#2ABFBF' };
+    case 'auction':      return { bg: 'rgba(212,168,67,.25)',  text: '#FFFFFF', dot: '#D4A843' };
+    case 'private sale': return { bg: 'rgba(42,191,191,.25)',  text: '#FFFFFF', dot: '#2ABFBF' };
+    case 'off market':   return { bg: 'rgba(155,111,208,.25)', text: '#FFFFFF', dot: '#9B6FD0' };
+    default:             return { bg: 'rgba(42,191,191,.25)',  text: '#FFFFFF', dot: '#2ABFBF' };
   }
 };
 
@@ -98,10 +98,15 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ story, className, style, 
 
         {/* Sale type badge */}
         <div
-          className="relative z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider flex-shrink-0"
-          style={{ background: typeColor.bg, color: typeColor.text, border: `1px solid ${typeColor.dot}40` }}
+          className="relative z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest flex-shrink-0 shadow-sm"
+          style={{ 
+            background: typeColor.bg, 
+            color: typeColor.text, 
+            border: `1.5px solid ${typeColor.dot}`,
+            backdropFilter: 'blur(4px)'
+          }}
         >
-          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: typeColor.dot }} />
+          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: typeColor.dot, boxShadow: `0 0 10px ${typeColor.dot}` }} />
           {story.saleType}
         </div>
       </div>

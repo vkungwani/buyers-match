@@ -178,23 +178,25 @@ export default function useCalcEngine(inputs) {
     const pp = Number(purchasePrice) || 0;
 
     // ── Loan & LMI ──────────────────────────────────────────────────────────
-    const loanPre = Math.max(0, pp - (Number(depositAmount) || 0) - (Number(equityUsed) || 0));
-    const lvr     = pp > 0 ? loanPre / pp : 0;
+    const purchaseLoan = Math.max(0, pp - (Number(depositAmount) || 0) - (Number(equityUsed) || 0));
+    const lvr          = pp > 0 ? purchaseLoan / pp : 0;
 
     let lmiResult;
     if (lmiWaived) {
       lmiResult = { lmi: 0, tier: 1 };
     } else if (lmiOverride !== '' && lmiOverride !== null && lmiOverride !== undefined) {
-      lmiResult = { lmi: Number(lmiOverride), tier: lmiCalc(loanPre, pp).tier };
+      lmiResult = { lmi: Number(lmiOverride), tier: lmiCalc(purchaseLoan, pp).tier };
     } else {
-      lmiResult = lmiCalc(loanPre, pp);
+      lmiResult = lmiCalc(purchaseLoan, pp);
     }
 
-    const loanPost = loanPre + lmiResult.lmi;
+    // Total debt = Purchase Loan + Equity Loan from elsewhere + optional capitalized LMI
+    const loanPre  = purchaseLoan; // This is the amount borrowed against the NEW property
+    const loanPost = purchaseLoan + (Number(equityUsed) || 0) + lmiResult.lmi;
 
     // ── State defaults ───────────────────────────────────────────────────────
-    const propMgtPct    = (STATE_PROPERTY_MANAGEMENT[state] ?? 8) / 100;
-    const councilRates  = STATE_COUNCIL_RATES[state] ?? 1800;
+    const propMgtPct    = (inputs.propMgtPct ?? STATE_PROPERTY_MANAGEMENT[state] ?? 8.8) / 100;
+    const councilRates  = inputs.councilRates ?? STATE_COUNCIL_RATES[state] ?? 1800;
     const depreciation  = BUILD_YEAR_DEPRECIATION[buildYear] ?? 0;
 
     // ── Rental income ────────────────────────────────────────────────────────
@@ -260,7 +262,8 @@ export default function useCalcEngine(inputs) {
       (Number(buildingPest)     || 0) +
       (Number(depSchedule)      || 0) +
       (Number(compliance)       || 0) +
-      (Number(settlementLegal)  || 0);
+      (Number(settlementLegal)  || 0) -
+      (Number(equityUsed)       || 0);
 
     return {
       // Loan

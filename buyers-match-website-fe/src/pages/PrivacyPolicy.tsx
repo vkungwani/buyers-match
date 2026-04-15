@@ -4,7 +4,7 @@ import { siteData } from '../config/siteData';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const PrivacyPolicy: React.FC = () => {
+const PrivacyPolicy: React.FC<{ openLeadModal?: any; openCalendly?: any }> = ({ openLeadModal, openCalendly }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const PrivacyPolicy: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-white">
-            <Navbar scrollToSection={scrollToSection} />
+            <Navbar scrollToSection={scrollToSection} openCalendly={openCalendly} />
 
             <main className="py-24 px-4">
                 <div className="container mx-auto max-w-4xl">
@@ -89,7 +89,7 @@ const PrivacyPolicy: React.FC = () => {
                 </div>
             </main>
 
-            <Footer scrollToSection={scrollToSection} />
+            <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} openLeadModal={openLeadModal} />
         </div>
     );
 };

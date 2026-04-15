@@ -32,6 +32,7 @@ import BlogsListPage from "./pages/BlogsListPage";
 import CaseStudiesPage from "./pages/CaseStudiesPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Disclaimer from "./pages/Disclaimer";
 import CashflowCalculator from "./pages/cashflow-calculator";
 
 function App() {
@@ -107,12 +108,13 @@ Method,HowWeHelp, Results, Testimonials
       <SuperNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<BlogsListPage />} />
-        <Route path="/blog/:id" element={<BlogPage />} />
-        <Route path="/case-studies" element={<CaseStudiesPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsOfService />} />
-        <Route path="/cashflow-calculator" element={<CashflowCalculator />} />
+        <Route path="/blog" element={<BlogsListPage openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
+        <Route path="/blog/:id" element={<BlogPage openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
+        <Route path="/case-studies" element={<CaseStudiesPage openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
+        <Route path="/terms" element={<TermsOfService openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
+        <Route path="/disclaimer" element={<Disclaimer openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
+        <Route path="/cashflow-calculator" element={<CashflowCalculator openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
       </Routes>
       <PopupModal
         url={siteData.contact.calendly}

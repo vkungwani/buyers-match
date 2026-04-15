@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faBath, faCar, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import CaseStudyCard from '../components/CaseStudyCard';
 
-const CaseStudiesPage: React.FC = () => {
+const CaseStudiesPage: React.FC<{ openLeadModal?: any; openCalendly?: any }> = ({ openLeadModal, openCalendly }) => {
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
@@ -20,10 +20,6 @@ const CaseStudiesPage: React.FC = () => {
 
     const scrollToSection = (id: string) => {
         navigate(`/#${id}`);
-    };
-
-    const openCalendly = () => {
-        window.open(siteData.contact.calendly, '_blank');
     };
 
     const handlePageChange = (page: number) => {
@@ -138,7 +134,7 @@ const CaseStudiesPage: React.FC = () => {
                 </div>
             </main>
 
-            <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} />
+            <Footer scrollToSection={scrollToSection} openCalendly={openCalendly} openLeadModal={openLeadModal} />
         </div>
     );
 };

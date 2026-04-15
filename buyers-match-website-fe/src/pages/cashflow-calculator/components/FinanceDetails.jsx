@@ -30,7 +30,7 @@ const MoneyInput = ({ value, onChange, disabled, placeholder }) => (
       placeholder={placeholder ?? ''}
       disabled={disabled}
       readOnly={disabled}
-      onChange={e => !disabled && onChange(parseFloat(e.target.value) || 0)}
+      onChange={e => !disabled && onChange(e.target.value === '' ? '' : Number(e.target.value))}
     />
   </div>
 );
@@ -46,13 +46,60 @@ const ReadonlyPill = ({ value }) => (
   </div>
 );
 
-const Field = ({ label, note, noteClass, full, children }) => (
-  <div className={`cfc-field${full ? ' full' : ''}`}>
-    <div className="cfc-label">{label}</div>
-    {children}
-    {note && <div className={`cfc-note${noteClass ? ' ' + noteClass : ''}`}>{note}</div>}
-  </div>
-);
+const Field = ({ label, note, noteClass, full, tooltip, children }) => {
+  const [showInfo, setShowInfo] = React.useState(false);
+  return (
+    <div className={`cfc-field${full ? ' full' : ''}`}>
+      <div className="cfc-label" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+        {label}
+        {tooltip && (
+          <button
+            type="button"
+            onClick={() => setShowInfo(!showInfo)}
+            style={{
+              background: showInfo ? 'var(--calc-teal)' : 'rgba(42, 191, 191, 0.12)',
+              border: '1px solid rgba(42, 191, 191, 0.3)',
+              color: showInfo ? '#fff' : 'var(--calc-teal-dark)',
+              borderRadius: '50%',
+              width: 14,
+              height: 14,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              fontSize: 9,
+              fontWeight: 800,
+              fontFamily: 'serif',
+              padding: 0,
+              flexShrink: 0
+            }}
+            title="More info"
+          >
+            i
+          </button>
+        )}
+      </div>
+      {tooltip && showInfo && (
+        <div style={{
+          fontSize: 10,
+          color: 'var(--calc-teal-dark)',
+          background: 'rgba(42, 191, 191, 0.08)',
+          border: '1px solid rgba(42, 191, 191, 0.15)',
+          padding: '6px 10px',
+          borderRadius: 6,
+          marginTop: -2,
+          marginBottom: 4,
+          lineHeight: 1.4,
+          fontWeight: 600
+        }}>
+          {tooltip}
+        </div>
+      )}
+      {children}
+      {note && <div className={`cfc-note${noteClass ? ' ' + noteClass : ''}`}>{note}</div>}
+    </div>
+  );
+};
 
 // ── FinanceDetails ────────────────────────────────────────────────────────────
 
@@ -72,11 +119,24 @@ const FinanceDetails = ({ inputs, onChange, depositPct, loanBreakdown, lmiResult
   return (
     <div className="cfc-card-primary">
       {/* Header */}
-      <div className="cfc-header-primary">
+      <div className="cfc-header-primary" style={{ display: 'flex', alignItems: 'center' }}>
         <div className="cfc-header-primary-icon"><BankIcon /></div>
-        <div>
+        <div style={{ flex: 1 }}>
           <div className="cfc-header-primary-title">Finance Details</div>
           <div className="cfc-header-primary-sub">Loan, deposit &amp; tax settings</div>
+        </div>
+        <div style={{ 
+          background: 'rgba(255, 255, 255, 0.15)', 
+          border: '1px solid rgba(255, 255, 255, 0.3)',
+          color: '#fff', 
+          fontSize: '9px', 
+          fontWeight: 800, 
+          padding: '4px 8px', 
+          borderRadius: '4px', 
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase'
+        }}>
+          Required
         </div>
       </div>
 
@@ -92,7 +152,7 @@ const FinanceDetails = ({ inputs, onChange, depositPct, loanBreakdown, lmiResult
               max={20}
               step={0.1}
               value={interestRate}
-              onChange={e => onChange('interestRate', parseFloat(e.target.value) || 0)}
+              onChange={e => onChange('interestRate', e.target.value === '' ? '' : Number(e.target.value))}
               style={{ paddingLeft: 10 }}
             />
             <span className="cfc-addon suffix">%</span>
@@ -100,7 +160,10 @@ const FinanceDetails = ({ inputs, onChange, depositPct, loanBreakdown, lmiResult
         </Field>
 
         {/* Tax Rate */}
-        <Field label="Tax Rate (Marginal)">
+        <Field 
+          label="Tax Rate (Marginal)"
+          tooltip="This is the income tax rate for your COMBINED family income"
+        >
           <select
             className="cfc-select"
             value={taxRate}
@@ -202,7 +265,7 @@ const FinanceDetails = ({ inputs, onChange, depositPct, loanBreakdown, lmiResult
               </div>
               <div className="cfc-breakdown-row">
                 <span className="cfc-breakdown-lbl">Equity Used</span>
-                <span className="cfc-breakdown-val">− {fmt(loanBreakdown.equityUsed)}</span>
+                <span className="cfc-breakdown-val">+ {fmt(loanBreakdown.equityUsed)}</span>
               </div>
               <div className="cfc-breakdown-row">
                 <span className="cfc-breakdown-lbl">LMI Premium</span>

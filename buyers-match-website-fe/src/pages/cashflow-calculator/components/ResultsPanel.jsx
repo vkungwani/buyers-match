@@ -16,7 +16,7 @@ const C_HINT  = 'rgba(255,255,255,0.28)';
 const C_DIV   = 'rgba(255,255,255,0.07)';
 
 // ── Section header ────────────────────────────────────────────────────────────
-const SectionHeader = ({ title, collapsible, open, onToggle }) => (
+const SectionHeader = ({ title, collapsible, open, onToggle, highlight }) => (
   <div
     onClick={collapsible ? onToggle : undefined}
     style={{
@@ -25,25 +25,27 @@ const SectionHeader = ({ title, collapsible, open, onToggle }) => (
       alignItems: 'center',
       justifyContent: 'space-between',
       cursor: collapsible ? 'pointer' : 'default',
-      background: 'rgba(255,255,255,0.025)',
-      borderBottom: `1px solid ${C_DIV}`,
+      background: highlight ? 'linear-gradient(135deg, rgba(42,191,191,0.15) 0%, rgba(42,191,191,0.02) 100%)' : 'rgba(255,255,255,0.025)',
+      borderBottom: highlight ? `1px solid rgba(42,191,191,0.4)` : `1px solid ${C_DIV}`,
+      borderTop: highlight ? `1px solid rgba(42,191,191,0.4)` : 'none',
       userSelect: 'none',
     }}
   >
     <span style={{
-      fontSize: 9.5,
-      fontWeight: 800,
+      fontSize: highlight ? 10.5 : 9.5,
+      fontWeight: highlight ? 900 : 800,
       textTransform: 'uppercase',
       letterSpacing: '0.13em',
-      color: C_HINT,
+      color: highlight ? C_TEAL : C_HINT,
     }}>
+      {highlight && <span style={{marginRight: 6}}>⭐</span>}
       {title}
     </span>
     {collapsible && (
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
         <path
           d={open ? 'M2 8l4-4 4 4' : 'M2 4l4 4 4-4'}
-          stroke={C_HINT}
+          stroke={highlight ? C_TEAL : C_HINT}
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -382,7 +384,7 @@ const ResultsPanel = ({ results, inputs }) => {
           SECTION 6 — Purchase Costs Summary
       ════════════════════════════════════════════════════════════════════ */}
       <div style={{ borderBottom: `1px solid ${C_DIV}` }}>
-        <SectionHeader title="Purchase Costs Summary" />
+        <SectionHeader title="Purchase Costs Summary" highlight />
 
         <CostRow label="Deposit"          value={depositAmount} />
         <CostRow label="Stamp Duty"        value={stampDutyResult?.amount ?? 0} />

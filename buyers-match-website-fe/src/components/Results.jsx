@@ -56,7 +56,7 @@ const Results = () => {
           </div>
           <Link
             to="/case-studies"
-            className="text-[13px] font-bold text-[#1E9898] no-underline hover:underline"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1E9898] text-[13px] font-bold text-white no-underline hover:bg-[#178080] transition-colors duration-200 shrink-0"
           >
             View all case studies →
           </Link>
