@@ -254,7 +254,7 @@ const Navbar = ({ scrollToSection, openCalendly }) => {
             {/* Desktop and Mobile Wrapper logic */}
             {isMobileMenuOpen ? (
               <>
-                <div className="space-y-6 mb-auto">
+                <div className="space-y-6 mb-8">
                   {navItem("method", "Our Method")}
                   {navItem("how-we-help", "How We Help")}
                   {navItem("results", "Results")}
