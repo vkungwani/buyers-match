@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { siteData } from "../config/siteData";
-import logo from "../assets/bm-logo-white-text.JPG";
+// import logo from "../assets/bm-logo-white-text.JPG";
+import logo from "../assets/bm-logo-white-text-removebg-preview.png";
 import {
   MailIcon,
   PhoneIcon,
