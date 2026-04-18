@@ -31,7 +31,7 @@ const MoneyInput = ({ value, onChange, placeholder }) => (
       min={0}
       step={1000}
       value={value}
-      placeholder={placeholder}
+      placeholder={placeholder ?? ''}
       onChange={(e) => onChange(e.target.value === "" ? "" : Number(e.target.value))}
     />
   </div>
@@ -126,6 +126,7 @@ const PropertyDetails = ({ inputs, onChange, stampDuty }) => {
             value={buildYear}
             onChange={(e) => onChange("buildYear", e.target.value)}
           >
+            <option value="" disabled>Select</option>
             {BUILD_YEARS.map((y) => (
               <option key={y} value={y}>
                 {y}

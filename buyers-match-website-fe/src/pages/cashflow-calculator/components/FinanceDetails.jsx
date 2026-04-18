@@ -169,6 +169,7 @@ const FinanceDetails = ({ inputs, onChange, depositPct, loanBreakdown, lmiResult
             value={taxRate}
             onChange={e => onChange('taxRate', parseFloat(e.target.value))}
           >
+            <option value="" disabled>Select</option>
             {TAX_RATES.map(r => (
               <option key={r.value} value={r.value}>{r.label}</option>
             ))}

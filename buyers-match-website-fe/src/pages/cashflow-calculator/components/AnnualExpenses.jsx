@@ -177,7 +177,7 @@ const AnnualExpenses = ({ inputs, onChange }) => {
         {/* Depreciation — readonly, driven by build year */}
         <Field
           label="Depreciation / yr"
-          note={`${buildYear} build`}
+          note={buildYear ? `${buildYear} build` : 'Select build year'}
           noteClass="teal"
         >
           <MoneyInput value={buildYearDepreciation} readonly />

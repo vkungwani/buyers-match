@@ -195,9 +195,13 @@ export default function useCalcEngine(inputs) {
     const loanPost = purchaseLoan + (Number(equityUsed) || 0) + lmiResult.lmi;
 
     // ── State defaults ───────────────────────────────────────────────────────
-    const propMgtPct    = (inputs.propMgtPct ?? STATE_PROPERTY_MANAGEMENT[state] ?? 8.8) / 100;
-    const councilRates  = inputs.councilRates ?? STATE_COUNCIL_RATES[state] ?? 1800;
-    const depreciation  = BUILD_YEAR_DEPRECIATION[buildYear] ?? 0;
+    const propMgtPct   = (inputs.propMgtPct !== '' && inputs.propMgtPct != null
+      ? Number(inputs.propMgtPct)
+      : (STATE_PROPERTY_MANAGEMENT[state] ?? 0)) / 100;
+    const councilRates = inputs.councilRates !== '' && inputs.councilRates != null
+      ? Number(inputs.councilRates)
+      : (STATE_COUNCIL_RATES[state] ?? 0);
+    const depreciation = BUILD_YEAR_DEPRECIATION[buildYear] ?? 0;
 
     // ── Rental income ────────────────────────────────────────────────────────
     const minAnnualRent = (Number(minWeeklyRent) || 0) * 52;
