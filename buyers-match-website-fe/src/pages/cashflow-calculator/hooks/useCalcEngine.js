@@ -170,7 +170,7 @@ export default function useCalcEngine(inputs) {
       depositAmount, equityUsed,
       lmiOverride, lmiWaived,
       waterRates, landlordInsurance, maintenance,
-      bankCharges, advertising, strata, landTax,
+      bankCharges, strata, landTax,
       conveyancing, buildingPest,
       depSchedule, compliance, settlementLegal,
     } = inputs;
@@ -233,7 +233,8 @@ export default function useCalcEngine(inputs) {
     const propMgtMin    = minAnnualRent * propMgtPct;
     const propMgtMax    = maxAnnualRent * propMgtPct;
     const leasingFee    = Number(minWeeklyRent) || 0;   // 1 week's rent
-    const advertisingVal = Number(advertising) || 0;
+    const hasRent       = (Number(minWeeklyRent) || 0) > 0 || (Number(maxWeeklyRent) || 0) > 0;
+    const advertising   = hasRent ? 350 : 0;
     const vacancy       = Number(minWeeklyRent) || 0;   // 1 week's rent
 
     const totalFixed =
@@ -247,7 +248,7 @@ export default function useCalcEngine(inputs) {
       (Number(strata)             || 0) +
       (Number(landTax)            || 0) +
       leasingFee +
-      advertisingVal +
+      advertising +
       vacancy;
 
     const minTotalExpenses = totalFixed + propMgtMin;
@@ -308,7 +309,7 @@ export default function useCalcEngine(inputs) {
       propMgtMin,
       propMgtMax,
       leasingFee,
-      advertising: advertisingVal,
+      advertising,
       vacancy,
       totalFixed,
       minTotalExpenses,

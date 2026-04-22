@@ -77,7 +77,6 @@ const AnnualExpenses = ({ inputs, onChange }) => {
     landlordInsurance,
     maintenance,
     bankCharges,
-    advertising,
     strata,
     landTax,
     propMgtPct,
@@ -159,14 +158,6 @@ const AnnualExpenses = ({ inputs, onChange }) => {
           <MoneyInput
             value={bankCharges}
             onChange={(v) => onChange("bankCharges", v)}
-          />
-        </Field>
-
-        {/* Advertising */}
-        <Field label="Advertising">
-          <MoneyInput
-            value={advertising}
-            onChange={(v) => onChange("advertising", v)}
           />
         </Field>
 

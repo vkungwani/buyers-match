@@ -59,7 +59,6 @@ export const DEFAULT_INPUTS = {
   landlordInsurance:400,
   maintenance:      2000,
   bankCharges:      500,
-  advertising:      0,
   strata:           '',
   landTax:          '',
   conveyancing:     1700,
