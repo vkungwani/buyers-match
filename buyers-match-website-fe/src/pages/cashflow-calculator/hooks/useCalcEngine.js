@@ -170,12 +170,33 @@ export default function useCalcEngine(inputs) {
       depositAmount, equityUsed,
       lmiOverride, lmiWaived,
       waterRates, landlordInsurance, maintenance,
-      bankCharges, strata, landTax,
+      bankCharges, advertising, strata, landTax,
       conveyancing, buildingPest,
       depSchedule, compliance, settlementLegal,
     } = inputs;
 
     const pp = Number(purchasePrice) || 0;
+
+    // ── Guard: nothing to calculate until a purchase price is entered ─────
+    if (pp === 0) {
+      const zero = {
+        loanPre: 0, loanPost: 0, lvr: 0,
+        lmiResult: { lmi: 0, tier: 1 },
+        propMgtPct: 0, councilRates: 0, depreciation: 0,
+        minAnnualRent: 0, maxAnnualRent: 0,
+        interest: 0, propMgtMin: 0, propMgtMax: 0,
+        leasingFee: 0, advertising: 0, vacancy: 0,
+        totalFixed: 0, minTotalExpenses: 0, maxTotalExpenses: 0,
+        minCashflowBT: 0, maxCashflowBT: 0,
+        minTaxableIncome: 0, maxTaxableIncome: 0,
+        minTaxBenefit: 0, maxTaxBenefit: 0,
+        minAfterTax: 0, maxAfterTax: 0,
+        minGrossYield: 0, maxGrossYield: 0,
+        stampDutyResult: { amount: 0, note: '' },
+        totalCashRequired: 0,
+      };
+      return zero;
+    }
 
     // ── Loan & LMI ──────────────────────────────────────────────────────────
     const purchaseLoan = Math.max(0, pp - (Number(depositAmount) || 0) - (Number(equityUsed) || 0));
@@ -212,7 +233,7 @@ export default function useCalcEngine(inputs) {
     const propMgtMin    = minAnnualRent * propMgtPct;
     const propMgtMax    = maxAnnualRent * propMgtPct;
     const leasingFee    = Number(minWeeklyRent) || 0;   // 1 week's rent
-    const advertising   = 350;
+    const advertisingVal = Number(advertising) || 0;
     const vacancy       = Number(minWeeklyRent) || 0;   // 1 week's rent
 
     const totalFixed =
@@ -226,7 +247,7 @@ export default function useCalcEngine(inputs) {
       (Number(strata)             || 0) +
       (Number(landTax)            || 0) +
       leasingFee +
-      advertising +
+      advertisingVal +
       vacancy;
 
     const minTotalExpenses = totalFixed + propMgtMin;
@@ -287,7 +308,7 @@ export default function useCalcEngine(inputs) {
       propMgtMin,
       propMgtMax,
       leasingFee,
-      advertising,
+      advertising: advertisingVal,
       vacancy,
       totalFixed,
       minTotalExpenses,
