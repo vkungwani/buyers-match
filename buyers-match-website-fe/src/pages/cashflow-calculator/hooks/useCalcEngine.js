@@ -283,7 +283,6 @@ export default function useCalcEngine(inputs) {
     const totalCashRequired =
       (Number(depositAmount)    || 0) +
       stampDutyResult.amount +
-      lmiResult.lmi +
       (Number(conveyancing)     || 0) +
       (Number(buildingPest)     || 0) +
       (Number(depSchedule)      || 0) +

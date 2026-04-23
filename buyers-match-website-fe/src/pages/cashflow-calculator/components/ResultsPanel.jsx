@@ -75,7 +75,7 @@ const ExpenseRow = ({ label, value, valueMin, valueMax }) => (
 );
 
 // ── Purchase cost row ─────────────────────────────────────────────────────────
-const CostRow = ({ label, value, isBold, isTotal }) => (
+const CostRow = ({ label, value, isBold, isTotal, isNegative }) => (
   <div style={{
     display: 'flex',
     justifyContent: 'space-between',
@@ -94,11 +94,11 @@ const CostRow = ({ label, value, isBold, isTotal }) => (
     <span style={{
       fontSize: isTotal ? 17 : 12.5,
       fontWeight: isTotal ? 900 : 700,
-      color: isTotal ? C_TEAL : C_WHITE,
+      color: isTotal ? C_TEAL : (isNegative ? C_NEG : C_WHITE),
       fontFamily: isTotal ? "'Playfair Display', Georgia, serif" : 'inherit',
       whiteSpace: 'nowrap',
     }}>
-      {fmtAbs(value ?? 0)}
+      {isNegative ? `(${fmtAbs(value ?? 0)})` : fmtAbs(value ?? 0)}
     </span>
   </div>
 );
@@ -393,6 +393,13 @@ const ResultsPanel = ({ results, inputs }) => {
         <CostRow label="Building & Pest"   value={buildingPest} />
         <CostRow label="Other Costs"       value={otherCosts} />
         <CostRow label="Settlement & Legal" value={settlementLegal} />
+
+        {(lmiResult?.lmi > 0) && (
+          <CostRow label="Less LMI (Capitalised)" value={lmiResult.lmi} isNegative />
+        )}
+        {(Number(equityUsed) > 0) && (
+          <CostRow label="Less Equity Used" value={Number(equityUsed)} isNegative />
+        )}
 
         {/* Total Cash Required */}
         <CostRow
