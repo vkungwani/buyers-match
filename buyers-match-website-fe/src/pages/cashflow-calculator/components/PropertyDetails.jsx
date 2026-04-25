@@ -22,8 +22,8 @@ const HomeIcon = () => (
 
 // ── Shared micro-components ───────────────────────────────────────────────────
 
-const MoneyInput = ({ value, onChange, placeholder }) => (
-  <div className="cfc-input-group">
+const MoneyInput = ({ value, onChange, placeholder, hasError }) => (
+  <div className="cfc-input-group" style={hasError ? { borderColor: '#e53e3e', boxShadow: '0 0 0 2px rgba(229,62,62,0.15)' } : {}}>
     <span className="cfc-addon">$</span>
     <input
       className="cfc-input"
@@ -37,11 +37,17 @@ const MoneyInput = ({ value, onChange, placeholder }) => (
   </div>
 );
 
-const Field = ({ label, note, full, children }) => (
+const Field = ({ label, note, full, required, errorMsg, children }) => (
   <div className={`cfc-field${full ? " full" : ""}`}>
-    <div className="cfc-label">{label}</div>
+    <div className="cfc-label">
+      {label}
+      {required && <span style={{ color: '#e53e3e', marginLeft: 3 }}>*</span>}
+    </div>
     {children}
-    {note && <div className="cfc-note">{note}</div>}
+    {errorMsg
+      ? <div className="cfc-note" style={{ color: '#e53e3e', fontWeight: 600 }}>{errorMsg}</div>
+      : note && <div className="cfc-note">{note}</div>
+    }
   </div>
 );
 
@@ -57,6 +63,10 @@ const PropertyDetails = ({ inputs, onChange, stampDuty }) => {
     homeInsurance,
     buyerType,
   } = inputs;
+
+  const formStarted = purchasePrice !== "" && purchasePrice > 0;
+  const minRentEmpty = minWeeklyRent === "" || minWeeklyRent === 0;
+  const showMinRentError = formStarted && minRentEmpty;
 
   const depositPct =
     purchasePrice > 0
@@ -146,11 +156,14 @@ const PropertyDetails = ({ inputs, onChange, stampDuty }) => {
         {/* Min Weekly Rent */}
         <Field
           label="Min Weekly Rent"
-          note={`Annual min: ${fmt((minWeeklyRent || 0) * 52)}`}
+          required
+          note={!minRentEmpty ? `Annual min: ${fmt(minWeeklyRent * 52)}` : undefined}
+          errorMsg={showMinRentError ? "Required — enter a weekly rent amount" : undefined}
         >
           <MoneyInput
             value={minWeeklyRent}
             onChange={(v) => onChange("minWeeklyRent", v)}
+            hasError={showMinRentError}
           />
         </Field>
 
