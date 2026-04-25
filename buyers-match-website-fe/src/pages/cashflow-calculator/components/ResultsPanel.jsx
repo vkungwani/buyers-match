@@ -134,7 +134,13 @@ const ResultsPanel = ({ results, inputs }) => {
     conveyancing = 0, buildingPest = 0,
     depSchedule = 0, compliance = 0, settlementLegal = 0,
     minWeeklyRent = 0, maxWeeklyRent = 0,
+    purchasePrice = 0,
   } = inputs ?? {};
+
+  // ── Overlay guard ──────────────────────────────────────────────────────────
+  const formStarted = Number(purchasePrice) > 0;
+  const minRentMissing = minWeeklyRent === '' || Number(minWeeklyRent) === 0;
+  const showOverlay = formStarted && minRentMissing;
 
   // ── Derived ────────────────────────────────────────────────────────────────
   const minATcolor = minAfterTax >= 0 ? C_POS : C_NEG;
@@ -159,6 +165,62 @@ const ResultsPanel = ({ results, inputs }) => {
   ];
 
   return (
+    <div style={{ position: 'relative', borderRadius: 20 }}>
+
+      {/* ── Required field overlay ─────────────────────────────────────── */}
+      {showOverlay && (
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 10,
+          borderRadius: 20,
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
+          background: 'rgba(15, 23, 42, 0.82)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 14,
+          padding: 32,
+          textAlign: 'center',
+        }}>
+          <div style={{
+            width: 52, height: 52, borderRadius: 14,
+            background: 'rgba(229,62,62,0.15)',
+            border: '1.5px solid rgba(229,62,62,0.4)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="#e53e3e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <div style={{ fontSize: 15, fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
+            Min Weekly Rent required
+          </div>
+          <div style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, maxWidth: 220 }}>
+            Enter a <strong style={{ color: 'rgba(255,255,255,0.75)' }}>Min Weekly Rent</strong> in Property Details to see your cashflow results.
+          </div>
+          <div style={{
+            marginTop: 4,
+            display: 'flex', alignItems: 'center', gap: 6,
+            fontSize: 11, fontWeight: 700, color: '#e53e3e',
+            background: 'rgba(229,62,62,0.1)',
+            border: '1px solid rgba(229,62,62,0.25)',
+            borderRadius: 8, padding: '6px 14px',
+          }}>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="18 15 12 9 6 15" />
+            </svg>
+            Fill in the field above
+          </div>
+        </div>
+      )}
+
     <div style={{
       background: '#1B2A4A',
       borderRadius: 20,
@@ -447,6 +509,7 @@ const ResultsPanel = ({ results, inputs }) => {
         </p>
       </div>
 
+    </div>
     </div>
   );
 };
