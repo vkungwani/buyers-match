@@ -304,7 +304,7 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                   </svg>
                 </div>
                 <div className="text-[12.5px] text-white/65">
-                  160+ transactions · $100M+ in property
+                  170+ transactions · $100M+ in property
                 </div>
               </div>
             </motion.div>
