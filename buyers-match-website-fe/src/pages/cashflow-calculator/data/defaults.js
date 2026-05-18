@@ -31,6 +31,7 @@ export const TAX_RATES = [
   { label: '30%', value: 0.30 },
   { label: '37%', value: 0.37 },
   { label: '45%', value: 0.45 },
+  {label:'0%', value:0}
 ];
 
 export const BUYER_TYPES = [
