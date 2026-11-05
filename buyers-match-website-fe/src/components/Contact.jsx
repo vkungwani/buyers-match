@@ -67,24 +67,17 @@ const Contact = ({ scrollToSection, openCalendly, openLeadModal }) => {
         </div>
 
         <div className="flex items-center justify-center gap-7 text-[13.5px] text-[rgba(27,42,74,.65)] flex-wrap">
-          <span>
-            📞 Puja:{" "}
-            <a
-              href={`tel:${siteData.contact.phones[0].replace(/\s/g, "")}`}
-              className="text-[#1B2A4A] font-bold hover:underline"
-            >
-              {siteData.contact.phones[0]}
-            </a>
-          </span>
-          <span>
-            📞 Vish:{" "}
-            <a
-              href={`tel:${siteData.contact.phones[1].replace(/\s/g, "")}`}
-              className="text-[#1B2A4A] font-bold hover:underline"
-            >
-              {siteData.contact.phones[1]}
-            </a>
-          </span>
+          {siteData.contact.phoneContacts.map((p, i) => (
+            <span key={i}>
+              📞 {p.name}:{" "}
+              <a
+                href={`tel:${p.number.replace(/\s/g, "")}`}
+                className="text-[#1B2A4A] font-bold hover:underline"
+              >
+                {p.number}
+              </a>
+            </span>
+          ))}
           <span>
             ✉️{" "}
             <a

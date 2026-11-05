@@ -1,15 +1,10 @@
+import differentContent from '../content/home/different.json';
 import React from 'react';
 import AnimatedText from './AnimatedText';
 import { motion } from 'framer-motion';
 import { StaggerContainer, itemVariants } from './Animations';
 
-const points = [
-  "Every property reviewed personally by Puja & Vish — not outsourced",
-  "Nationwide investment opportunities across all Australian states",
-  "Research-driven acquisition strategy — 38 parameters, zero guesswork",
-  "Focus on long-term portfolio growth, not single one-off purchases",
-  "No developer kickbacks — 100% in your corner, always",
-];
+const points = differentContent.points;
 
 const Different = () => {
   return (

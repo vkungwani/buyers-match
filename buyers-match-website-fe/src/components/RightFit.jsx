@@ -1,21 +1,10 @@
+import rightFit from "../content/home/right-fit.json";
 import React from "react";
 import AnimatedText from "./AnimatedText";
 import { siteData } from "../config/siteData";
 
-const yesPoints = [
-  "You want to build a long-term property portfolio",
-  "You value strategy and research over speculation",
-  "You're open to investing across Australia",
-  "You want experts negotiating and sourcing the best opportunities",
-  "You prefer a done-for-you approach",
-];
-
-const noPoints = [
-  "You're looking for quick flips or speculative deals",
-  "You only want to buy in one suburb because you like it",
-  "You want to bid at auctions yourself",
-  "You're not ready to invest within the next 3–6 months",
-];
+const yesPoints = rightFit.yes;
+const noPoints = rightFit.no;
 
 const RightFit = ({ openCalendly }) => {
   return (

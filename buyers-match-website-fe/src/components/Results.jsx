@@ -6,12 +6,18 @@ import CaseStudyCard from "./CaseStudyCard";
 import { siteData } from "../config/siteData";
 import { FadeUp } from "./Animations";
 
-const allProperties = [
-  ...siteData.successStories,
-  ...siteData.successStories,
-  ...siteData.successStories,
-  ...siteData.successStories,
-];
+// The scrolling strip repeats the list four times so it loops
+// seamlessly. The build-time pre-render only needs one copy (search
+// engines don't need the repeats), which keeps the home page HTML small.
+const allProperties =
+  typeof window === "undefined"
+    ? siteData.successStories
+    : [
+        ...siteData.successStories,
+        ...siteData.successStories,
+        ...siteData.successStories,
+        ...siteData.successStories,
+      ];
 
 const Results = () => {
   const [isPaused, setIsPaused] = useState(false);

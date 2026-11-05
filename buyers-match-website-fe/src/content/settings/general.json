@@ -1,0 +1,52 @@
+{
+  "siteName": "BuyersMatch",
+  "contact": {
+    "address": "Gold Coast, QLD",
+    "email": "info@buyersmatch.com.au",
+    "calendly": "https://calendly.com/puja-2fa/initialmeeting",
+    "phones": [
+      {
+        "name": "Puja",
+        "number": "0466 914 929"
+      },
+      {
+        "name": "Vish",
+        "number": "0434 118 033"
+      }
+    ]
+  },
+  "whatsapp": {
+    "phoneNumber": "+61466914929",
+    "prefilledMessage": "Hi, I am interested in BuyersMatch services. Please share next steps."
+  },
+  "socials": [
+    {
+      "name": "facebook",
+      "url": "https://www.facebook.com/buyersmatchaustralia"
+    },
+    {
+      "name": "instagram",
+      "url": "https://www.instagram.com/buyers_match/?hl=en"
+    },
+    {
+      "name": "youtube",
+      "url": "https://www.youtube.com/@BuyersMatch"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/puja-dhanetwal/?originalSubdomain=au"
+    },
+    {
+      "name": "tiktok",
+      "url": "https://www.tiktok.com/@buyersmatch"
+    },
+    {
+      "name": "google",
+      "url": "https://share.google/U5u6U6rlaAZs8KpBl"
+    },
+    {
+      "name": "maps",
+      "url": "https://www.google.com/maps/place/BuyersMatch/@-36.5712557,99.6994519,3z/data=!4m6!3m5!1s0x9a64e54f2968b55:0x765d586cc54a73c!8m2!3d-24.1501978!4d136.0132792!16s%2Fg%2F11v6z05n76?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D"
+    }
+  ]
+}

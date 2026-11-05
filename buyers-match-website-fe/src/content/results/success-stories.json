@@ -1,0 +1,886 @@
+{
+  "items": [
+    {
+      "state": "QLD",
+      "purchaseDate": "Nov-2024",
+      "purchasePrice": 262000,
+      "currentPrice": 393500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 8.93,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Oct-2024",
+      "purchasePrice": 601000,
+      "currentPrice": 727000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 8.22,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Jun-2024",
+      "purchasePrice": 578000,
+      "currentPrice": 720000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 8.01,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2024",
+      "purchasePrice": 350000,
+      "currentPrice": 546000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 7.8,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 300000,
+      "currentPrice": 325000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 7.8,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Aug-2025",
+      "purchasePrice": 560000,
+      "currentPrice": 579500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 7.71,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Apr-2025",
+      "purchasePrice": 585000,
+      "currentPrice": 629500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 7.56,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2025",
+      "purchasePrice": 625000,
+      "currentPrice": 725500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 7.07,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Feb-2026",
+      "purchasePrice": 725000,
+      "currentPrice": 725000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.81,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jul-2025",
+      "purchasePrice": 574000,
+      "currentPrice": 596000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.79,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "TAS",
+      "purchaseDate": "Oct-2025",
+      "purchasePrice": 590000,
+      "currentPrice": 632000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.7,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jun-2024",
+      "purchasePrice": 380000,
+      "currentPrice": 633500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.64,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Jul-2024",
+      "purchasePrice": 550000,
+      "currentPrice": 693000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.62,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Sep-2024",
+      "purchasePrice": 490000,
+      "currentPrice": 706500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.58,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Apr-2025",
+      "purchasePrice": 835000,
+      "currentPrice": 997500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.54,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Aug-2024",
+      "purchasePrice": 440000,
+      "currentPrice": 628500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.5,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Dec-2024",
+      "purchasePrice": 445000,
+      "currentPrice": 627000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.43,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 850000,
+      "currentPrice": 842000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.42,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Sep-2024",
+      "purchasePrice": 532000,
+      "currentPrice": 688000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.35,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Aug-2025",
+      "purchasePrice": 630000,
+      "currentPrice": 676000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.19,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "SA",
+      "purchaseDate": "Jun-2025",
+      "purchasePrice": 660000,
+      "currentPrice": 763000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.15,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Sep-2025",
+      "purchasePrice": 626500,
+      "currentPrice": 694000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.14,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "May-2025",
+      "purchasePrice": 600000,
+      "currentPrice": 698500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6.07,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Apr-2024",
+      "purchasePrice": 451000,
+      "currentPrice": 650500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 6,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Aug-2025",
+      "purchasePrice": 601000,
+      "currentPrice": 681000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.97,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Apr-2025",
+      "purchasePrice": 615000,
+      "currentPrice": 718500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.92,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Aug-2024",
+      "purchasePrice": 795000,
+      "currentPrice": 930500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.89,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "May-2025",
+      "purchasePrice": 680000,
+      "currentPrice": 635500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.83,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Jun-2024",
+      "purchasePrice": 580000,
+      "currentPrice": 680000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.83,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Feb-2025",
+      "purchasePrice": 605000,
+      "currentPrice": 870000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.8,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "May-2025",
+      "purchasePrice": 650000,
+      "currentPrice": 791000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.76,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Apr-2024",
+      "purchasePrice": 575000,
+      "currentPrice": 767000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.61,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Apr-2025",
+      "purchasePrice": 583000,
+      "currentPrice": 697500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.57,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Apr-2024",
+      "purchasePrice": 551000,
+      "currentPrice": 732500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.57,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Nov-2024",
+      "purchasePrice": 515000,
+      "currentPrice": 669000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.55,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2026",
+      "purchasePrice": 550000,
+      "currentPrice": 539000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.48,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Mar-2025",
+      "purchasePrice": 530500,
+      "currentPrice": 641500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.39,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2024",
+      "purchasePrice": 560000,
+      "currentPrice": 790000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.39,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Oct-2024",
+      "purchasePrice": 480000,
+      "currentPrice": 599500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.36,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Nov-2025",
+      "purchasePrice": 680000,
+      "currentPrice": 773500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.35,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jul-2024",
+      "purchasePrice": 562000,
+      "currentPrice": 688500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.32,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "May-2025",
+      "purchasePrice": 611000,
+      "currentPrice": 701000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.32,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Apr-2025",
+      "purchasePrice": 832500,
+      "currentPrice": 931500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.25,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Nov-2025",
+      "purchasePrice": 650000,
+      "currentPrice": 665000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.2,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2026",
+      "purchasePrice": 575000,
+      "currentPrice": 616500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.2,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Oct-2025",
+      "purchasePrice": 725000,
+      "currentPrice": 761500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.16,
+      "saleType": "Pre Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Aug-2023",
+      "purchasePrice": 545000,
+      "currentPrice": 829500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.15,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jul-2025",
+      "purchasePrice": 610000,
+      "currentPrice": 713500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.11,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2024",
+      "purchasePrice": 585000,
+      "currentPrice": 840000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.11,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Mar-2025",
+      "purchasePrice": 580000,
+      "currentPrice": 707500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.07,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2024",
+      "purchasePrice": 701000,
+      "currentPrice": 1010000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 5.01,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Aug-2025",
+      "purchasePrice": 620000,
+      "currentPrice": 726000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.99,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Sep-2024",
+      "purchasePrice": 660000,
+      "currentPrice": 858000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.96,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2025",
+      "purchasePrice": 520000,
+      "currentPrice": 639000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.95,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Nov-2025",
+      "purchasePrice": 520000,
+      "currentPrice": 553500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.9,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Oct-2024",
+      "purchasePrice": 585000,
+      "currentPrice": 736500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.89,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Feb-2025",
+      "purchasePrice": 620000,
+      "currentPrice": 754500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.86,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2025",
+      "purchasePrice": 620000,
+      "currentPrice": 759000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.86,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Nov-2023",
+      "purchasePrice": 699000,
+      "currentPrice": 1037500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.84,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Aug-2025",
+      "purchasePrice": 595000,
+      "currentPrice": 659500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.81,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 625000,
+      "currentPrice": 678500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.78,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 543750,
+      "currentPrice": 515500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.78,
+      "saleType": "Pre Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jun-2025",
+      "purchasePrice": 655000,
+      "currentPrice": 802500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.76,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Jul-2025",
+      "purchasePrice": 601000,
+      "currentPrice": 522000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.76,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jun-2024",
+      "purchasePrice": 840000,
+      "currentPrice": 1105000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.72,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 638000,
+      "currentPrice": 664500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.69,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Sep-2024",
+      "purchasePrice": 590000,
+      "currentPrice": 755500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.67,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 627000,
+      "currentPrice": 636000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.64,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 640500,
+      "currentPrice": 623500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.63,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "TAS",
+      "purchaseDate": "Jan-2026",
+      "purchasePrice": 600000,
+      "currentPrice": 599000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.59,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Jul-2025",
+      "purchasePrice": 570000,
+      "currentPrice": 618000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.56,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "May-2025",
+      "purchasePrice": 684000,
+      "currentPrice": 714500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.56,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Nov-2025",
+      "purchasePrice": 617000,
+      "currentPrice": 672500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.55,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Oct-2025",
+      "purchasePrice": 663000,
+      "currentPrice": 690000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.55,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Oct-2025",
+      "purchasePrice": 810000,
+      "currentPrice": 859500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.49,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Dec-2024",
+      "purchasePrice": 488000,
+      "currentPrice": 552000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.48,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2026",
+      "purchasePrice": 675000,
+      "currentPrice": 662500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.47,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "SA",
+      "purchaseDate": "Sep-2024",
+      "purchasePrice": 560000,
+      "currentPrice": 656000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.46,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Nov-2024",
+      "purchasePrice": 612000,
+      "currentPrice": 734000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.42,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Feb-2024",
+      "purchasePrice": 622000,
+      "currentPrice": 871500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.39,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Oct-2024",
+      "purchasePrice": 690000,
+      "currentPrice": 940000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.33,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Mar-2025",
+      "purchasePrice": 660000,
+      "currentPrice": 739000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.33,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Nov-2025",
+      "purchasePrice": 595000,
+      "currentPrice": 631500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.33,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Sep-2025",
+      "purchasePrice": 685000,
+      "currentPrice": 734000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.18,
+      "saleType": "Pre Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Oct-2025",
+      "purchasePrice": 715000,
+      "currentPrice": 746500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.11,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "NSW",
+      "purchaseDate": "Jan-2026",
+      "purchasePrice": 573500,
+      "currentPrice": 604500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.08,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Aug-2025",
+      "purchasePrice": 633000,
+      "currentPrice": 758000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 4.07,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Mar-2025",
+      "purchasePrice": 783000,
+      "currentPrice": 916500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.98,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "WA",
+      "purchaseDate": "Jun-2024",
+      "purchasePrice": 600000,
+      "currentPrice": 787500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.9,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Mar-2025",
+      "purchasePrice": 735000,
+      "currentPrice": 794500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.89,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Jan-2026",
+      "purchasePrice": 750000,
+      "currentPrice": 841000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.81,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Nov-2023",
+      "purchasePrice": 725000,
+      "currentPrice": 945500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.73,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Oct-2025",
+      "purchasePrice": 720000,
+      "currentPrice": 815000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.68,
+      "saleType": "Off Market"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Dec-2025",
+      "purchasePrice": 750001,
+      "currentPrice": 788500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.67,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "QLD",
+      "purchaseDate": "Nov-2024",
+      "purchasePrice": 647000,
+      "currentPrice": 669500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 3.62,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "May-2025",
+      "purchasePrice": 1100000,
+      "currentPrice": 1260000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": 2.84,
+      "saleType": "Private Sale"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Nov-2024",
+      "purchasePrice": 821000,
+      "currentPrice": 955500,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": null,
+      "saleType": "Auction"
+    },
+    {
+      "state": "VIC",
+      "purchaseDate": "Nov-2023",
+      "purchasePrice": 915000,
+      "currentPrice": 1060000,
+      "currentPriceAsAt": "Dec-2025",
+      "rentalYield": null,
+      "saleType": "Auction"
+    }
+  ]
+}

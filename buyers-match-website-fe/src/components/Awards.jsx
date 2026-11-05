@@ -2,46 +2,40 @@ import React, { useState } from "react";
 import AnimatedText from "./AnimatedText";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, StaggerContainer, itemVariants } from "./Animations";
-import award1 from "../assets/award1_low.webp";
-import award2 from "../assets/award2.jpeg";
+import awardsContent from "../content/home/awards.json";
 
-const awards = [
-  {
-    img: award1,
-    alt: "Buyer's Agent Institute Rising Star Award 2024 — Puja Dhanetwal",
-    badge: { bg: "linear-gradient(135deg,#2ABFBF,#1a9999)", emoji: "⭐" },
-    glow: "rgba(42,191,191,0.25)", // Teal glow
-    year: "2024",
-    title: "Rising Star Award",
-    org: "Buyer's Agent Institute",
-    desc: (
-      <>
-        It was presented to <strong>Puja Dhanetwal</strong> in recognition of
-        outstanding achievement and truly exceptional client outcomes as a
-        highly promising and emerging buyer's agent in Australia.
-      </>
-    ),
-    ribbon: "🏆 Puja Dhanetwal · BAI 2024",
-  },
-  {
-    img: award2,
-    alt: "Monash Business Awards 2024/25 Nominee — BuyersMatch Professional Services",
-    badge: { bg: "linear-gradient(135deg,#6B3FA0,#4a2880)", emoji: "🎖️" },
-    glow: "rgba(107,63,160,0.25)", // Purple glow
-    year: "2024 / 25",
-    title: "Professional Services Nominee",
-    org: "Monash Business Awards",
-    desc: (
-      <>
-        BuyersMatch was nominated for the{" "}
-        <strong>2024/25 Monash Business Awards</strong> in the Professional
-        Services category — recognising excellence and impact in the local
-        business community.
-      </>
-    ),
-    ribbon: "🎖️ MBA Nominee · Presented 18 June 2025",
-  },
-];
+// Colour themes selectable in the CMS
+const awardThemes = {
+  teal: { bg: "linear-gradient(135deg,#2ABFBF,#1a9999)", glow: "rgba(42,191,191,0.25)" },
+  purple: { bg: "linear-gradient(135deg,#6B3FA0,#4a2880)", glow: "rgba(107,63,160,0.25)" },
+  gold: { bg: "linear-gradient(135deg,#D4A843,#a8812a)", glow: "rgba(212,168,67,0.25)" },
+  navy: { bg: "linear-gradient(135deg,#2C4070,#1B2A4A)", glow: "rgba(44,64,112,0.25)" },
+};
+
+// Turns **bold** text from the CMS into <strong> tags
+const withBold = (text = "") =>
+  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i}>{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    )
+  );
+
+const awards = awardsContent.items.map((a) => {
+  const theme = awardThemes[a.colour] || awardThemes.teal;
+  return {
+    img: a.image,
+    alt: a.alt,
+    badge: { bg: theme.bg, emoji: a.emoji },
+    glow: theme.glow,
+    year: a.year,
+    title: a.title,
+    org: a.org,
+    desc: withBold(a.desc),
+    ribbon: a.ribbon,
+  };
+});
 
 const shimmerKeyframes = `
   @keyframes shimmerAcross {

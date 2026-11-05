@@ -6,6 +6,7 @@ import ava2 from "../assets/aiface2.webp";
 import ava3 from "../assets/aiface3.webp";
 import ava4 from "../assets/aiface4.webp";
 import { StaggerContainer, itemVariants } from "./Animations";
+import hero from "../content/home/hero.json";
 
 const Hero = ({ scrollToSection, openCalendly }) => {
   const handleNavClick = (e, hash) => {
@@ -103,18 +104,21 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 className="w-[7px] h-[7px] bg-[#2ABFBF] rounded-full flex-shrink-0"
                 style={{ animation: "pulse-ring 2s infinite" }}
               />
-              Australia's Property Matchmakers for Serious Investors
+              {hero.badge}
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="font-playfair text-[clamp(38px,5vw,70px)] font-black text-white leading-[1.05] tracking-[-0.03em] mb-[18px]"
             >
-              Where Property <br /> Investors
-              <br />
-              Find Their <br />
+              {hero.headline.split("\n").map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
               <em className="text-[#2ABFBF] not-italic">
-                {"Perfect Match.".split("").map((char, index) => (
+                {hero.headlineHighlight.split("").map((char, index) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0, display: "inline-block" }}
@@ -135,9 +139,7 @@ const Hero = ({ scrollToSection, openCalendly }) => {
               variants={itemVariants}
               className="text-[clamp(15px,1.6vw,18px)] font-medium leading-[1.75] text-white/65 max-w-[500px] mb-6"
             >
-              We're Australia's property investment matchmakers. Our proven
-              approach connects serious investors with high-growth opportunities
-              across the country.
+              {hero.intro}
             </motion.p>
 
             <motion.div
@@ -148,7 +150,7 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 className="w-2 h-2 bg-[#2ABFBF] rounded-full flex-shrink-0 shadow-[0_0_10px_#2ABFBF]"
                 style={{ animation: "pulse-ring 2s infinite" }}
               />
-              Helping investors build high-growth property portfolios since 2023
+              {hero.strapline}
             </motion.div>
 
             {/* Investor → Market → Property → Strategy strip */}
@@ -343,20 +345,13 @@ const Hero = ({ scrollToSection, openCalendly }) => {
                 </div>
                 <div>
                   <div className="font-bold text-[12.5px] text-white">
-                    Joshua Cooper
+                    {hero.featuredReview.name}
                   </div>
                   {/* <div className="text-[10px] text-[#2ABFBF] mb-1 tracking-[0.04em]">
                     Melbourne · Interstate Investor · 4 reviews
                   </div> */}
                   <div className="text-[11.5px] text-white/65 leading-[1.5]">
-                    "Puja and Vish were great throughout their entire dealings
-                    securing a Melbourne investment property for an interstate
-                    buyer. Accommodating with their time, very thorough and well
-                    explained. With swift negotiation buyers match landed us a
-                    deal under market value with an extended settlement. As a
-                    first timer using a buyers advocate they gave us lots of
-                    confidence and guided us through each stage of our purchase.
-                    Would recommend to anyone."
+                    "{hero.featuredReview.text}"
                   </div>
                   <div className="flex text-[#D4A843] text-[10px] mt-1 tracking-[1.5px]">
                     <svg width="68" height="12" viewBox="0 0 68 12" fill="none">

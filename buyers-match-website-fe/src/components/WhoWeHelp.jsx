@@ -1,52 +1,9 @@
+import whoWeHelp from "../content/home/who-we-help.json";
 import React, { useState } from "react";
 import AnimatedText from "./AnimatedText";
 import { FadeUp } from "./Animations";
-import smsfImg from "../assets/smsf_investors.avif";
-import propertyImg from "../assets/property_investors.avif";
-import ownerImg from "../assets/owner-occupiers.webp";
-import firstHomeImg from "../assets/first-home-buyers.webp";
-import renovationImg from "../assets/Renovation.webp";
-import interstateImg from "../assets/interstate-buyers.webp";
 
-const cardData = [
-  {
-    title: "Property Investors",
-    desc: "Building property portfolios across Australia. We identify high-growth opportunities and optimize your investment strategy for maximum yield.",
-    image: propertyImg,
-    tag: "Investor Match",
-  },
-
-  {
-    title: "Interstate Buyers",
-    desc: "Invest anywhere in Australia with local knowledge on the ground. We are your eyes and ears in every market.",
-    image: interstateImg,
-    tag: "Nationwide",
-  },
-  {
-    title: "SMSF Investors",
-    desc: "Specialized property acquisition for Super Funds. Full compliance while maximizing long-term returns for your retirement portfolio.",
-    image: smsfImg,
-    tag: "Super Fund",
-  },
-  {
-    title: "Renovators & Flippers",
-    desc: "Find undervalued properties with strong renovation or flip potential. We source the deals others miss.",
-    image: renovationImg,
-    tag: "Value Add",
-  },
-  {
-    title: "Owner Occupiers",
-    desc: "Find and secure the right home without competing blind at auction. Expert advocacy on your side every step of the way.",
-    image: ownerImg,
-    tag: "Home Buyer",
-  },
-  {
-    title: "First Home Buyers",
-    desc: "Navigate your first purchase with expert guidance from day one. We simplify the complex so you buy with confidence.",
-    image: firstHomeImg,
-    tag: "First Purchase",
-  },
-];
+const cardData = whoWeHelp.cards;
 
 const WhoWeHelp = () => {
   const [hovered, setHovered] = useState(null);

@@ -1,25 +1,57 @@
-import { blog1 } from './blog1';
-import { blog2 } from './blog2';
-import { blog3 } from './blog3';
-import { blog4 } from './blog4';
-import { blog5 } from './blog5';
-import { blog6 } from './blog6';
-import { blog7 } from './blog7';
-import { blog8 } from './blog8';
-import { blog9 } from './blog9';
-import { blog10 } from './blog10';
-import { blog11 } from './blog11';
-
-export const blogsData: Record<string, any> = {
-    "real-estate-portfolio-examples": blog1,
-    "build-portfolio-no-money": blog2,
-    "insurance-embargo-qld": blog3,
-    "why-use-buyers-agent": blog4,
-    "tenanted-properties-wealth": blog5,
-    "strategic-planning-investment": blog6,
-    "thriving-portfolio-scratch": blog7,
-    "power-of-buyers-agents": blog8,
-    "investment-sweet-spot": blog9,
-    "elevating-investment-experience": blog10,
-    "insurance-safeguards-investment": blog11,
+// Blog posts are managed through the CMS (/admin) and stored as
+// JSON files in src/content/blog/<slug>.json. The file name is the
+// post's URL slug, e.g. /blog/why-use-buyers-agent.
+type BlogFile = {
+    title: string;
+    date: string; // YYYY-MM-DD
+    image: string;
+    excerpt: string;
+    body: string; // Markdown
+    draft?: boolean;
 };
+
+export type Blog = {
+    id: string;
+    title: string;
+    image: string;
+    date: string; // formatted for display, e.g. "Feb 10, 2024"
+    isoDate: string;
+    excerpt: string;
+    body: string;
+};
+
+const files = import.meta.glob<BlogFile>('../../content/blog/*.json', {
+    eager: true,
+    import: 'default',
+});
+
+const formatDate = (iso: string) => {
+    const [y, m, d] = String(iso).slice(0, 10).split('-').map(Number);
+    if (!y || !m || !d) return String(iso);
+    return new Date(y, m - 1, d).toLocaleDateString('en-US', {
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric',
+    });
+};
+
+export const blogs: Blog[] = Object.entries(files)
+    .filter(([, b]) => !b.draft)
+    .map(([path, b]) => {
+        const id = path.split('/').pop()!.replace(/\.json$/, '');
+        const isoDate = String(b.date).slice(0, 10);
+        return {
+            id,
+            title: b.title,
+            image: b.image,
+            date: formatDate(isoDate),
+            isoDate,
+            excerpt: b.excerpt,
+            body: b.body || '',
+        };
+    })
+    .sort((a, b) => b.isoDate.localeCompare(a.isoDate));
+
+export const blogsData: Record<string, Blog> = Object.fromEntries(
+    blogs.map((b) => [b.id, b])
+);

@@ -1,0 +1,259 @@
+# ─────────────────────────────────────────────────────────────
+# BuyersMatch website editor (Decap CMS) — open /admin on the site
+# Every "Publish" saves a commit to GitHub; Netlify then rebuilds
+# the site automatically (usually live within 1–2 minutes).
+# ─────────────────────────────────────────────────────────────
+backend:
+  name: github
+  repo: vkungwani/buyers-match
+  branch: main
+  commit_messages:
+    create: "CMS: create {{collection}} “{{slug}}”"
+    update: "CMS: update {{collection}} “{{slug}}”"
+    delete: "CMS: delete {{collection}} “{{slug}}”"
+    uploadMedia: "CMS: upload “{{path}}”"
+    deleteMedia: "CMS: delete “{{path}}”"
+
+# Lets you run the editor on your own computer without logging in
+# (npx decap-server from the repo folder, then npm run dev).
+local_backend: true
+
+site_url: https://buyersmatch.com.au
+display_url: https://buyersmatch.com.au
+logo_url: /favicon.png
+
+media_folder: buyers-match-website-fe/public/uploads
+public_folder: /uploads
+
+# Side-by-side preview is only useful for blog posts
+editor:
+  preview: false
+
+collections:
+  # ── BLOG ────────────────────────────────────────────────────
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    description: Posts appear on the homepage blog slider and at /blog, newest first.
+    folder: buyers-match-website-fe/src/content/blog
+    format: json
+    extension: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    editor:
+      preview: true
+    summary: "{{date}} — {{title}}"
+    sortable_fields: [date, title]
+    media_folder: /buyers-match-website-fe/public/uploads/blog
+    public_folder: /uploads/blog
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish date, name: date, widget: datetime, default: "{{now}}", date_format: "DD MMM YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true }
+      - { label: Hide from site (draft), name: draft, widget: boolean, default: false, required: false, hint: "Tick to keep this post off the website for now." }
+      - { label: Cover image, name: image, widget: image, hint: "Landscape image, around 1200 × 675px." }
+      - { label: Short summary, name: excerpt, widget: text, hint: "One or two sentences shown on the blog cards and at the top of the post." }
+      - { label: Post content, name: body, widget: markdown, buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list, quote], editor_components: [image] }
+
+  # ── RESULTS ─────────────────────────────────────────────────
+  - name: results
+    label: Results / case studies
+    files:
+      - name: success-stories
+        label: Properties secured (results carousel & case studies page)
+        file: buyers-match-website-fe/src/content/results/success-stories.json
+        fields:
+          - label: Properties
+            name: items
+            widget: list
+            add_to_top: true
+            collapsed: true
+            summary: "{{fields.state}} · bought {{fields.purchaseDate}} · ${{fields.purchasePrice}} → ${{fields.currentPrice}}"
+            hint: "New properties added at the top appear first."
+            fields:
+              - { label: State, name: state, widget: select, options: [QLD, NSW, VIC, WA, SA, TAS, ACT, NT] }
+              - { label: Purchase date (e.g. Nov-2024), name: purchaseDate, widget: string, pattern: ['^[A-Z][a-z]{2}-\d{4}$', "Use the format Mmm-YYYY, e.g. Nov-2024"] }
+              - { label: Purchase price ($), name: purchasePrice, widget: number, value_type: int }
+              - { label: Current value ($), name: currentPrice, widget: number, value_type: int }
+              - { label: Current value as at (e.g. Dec-2025), name: currentPriceAsAt, widget: string, pattern: ['^[A-Z][a-z]{2}-\d{4}$', "Use the format Mmm-YYYY, e.g. Dec-2025"] }
+              - { label: Rental yield (%), name: rentalYield, widget: number, value_type: float, required: false, hint: "Leave blank if not applicable." }
+              - { label: Sale type, name: saleType, widget: select, options: ["Private Sale", "Auction", "Off-Market", "Expression of Interest"] }
+
+  # ── HOMEPAGE ────────────────────────────────────────────────
+  - name: home
+    label: Homepage sections
+    files:
+      - name: hero
+        label: Hero (top banner)
+        file: buyers-match-website-fe/src/content/home/hero.json
+        fields:
+          - { label: Small badge above the headline, name: badge, widget: string }
+          - { label: Headline, name: headline, widget: text, hint: "Each new line here becomes a new line on the site." }
+          - { label: Highlighted end of headline (teal), name: headlineHighlight, widget: string }
+          - { label: Intro paragraph, name: intro, widget: text }
+          - { label: Strapline pill, name: strapline, widget: string }
+          - label: Featured review (floating card)
+            name: featuredReview
+            widget: object
+            fields:
+              - { label: Reviewer name, name: name, widget: string }
+              - { label: Review text, name: text, widget: text }
+
+      - name: stats
+        label: Stats bar (the teal numbers strip)
+        file: buyers-match-website-fe/src/content/home/stats.json
+        fields:
+          - label: Stats
+            name: items
+            widget: list
+            collapsed: false
+            summary: "{{fields.prefix}}{{fields.value}}{{fields.suffix}} {{fields.label}}"
+            fields:
+              - { label: Number, name: value, widget: number, value_type: float }
+              - { label: Decimal places, name: decimals, widget: number, value_type: int, default: 0, min: 0, max: 2 }
+              - { label: "Before the number (e.g. $)", name: prefix, widget: string, required: false }
+              - { label: "After the number (e.g. +, M+, ★)", name: suffix, widget: string, required: false }
+              - { label: Label, name: label, widget: string }
+
+      - name: process
+        label: Our process
+        file: buyers-match-website-fe/src/content/home/process.json
+        fields:
+          - label: Steps
+            name: steps
+            widget: list
+            collapsed: false
+            summary: "{{fields.title}}"
+            hint: "Steps are numbered automatically in this order."
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: desc, widget: text }
+          - { label: Research checklist items, name: checklist, widget: list, field: { label: Item, name: item, widget: string } }
+
+      - name: different
+        label: What makes us different
+        file: buyers-match-website-fe/src/content/home/different.json
+        fields:
+          - { label: Points, name: points, widget: list, field: { label: Point, name: point, widget: string } }
+
+      - name: who-we-help
+        label: Who we help
+        file: buyers-match-website-fe/src/content/home/who-we-help.json
+        media_folder: /buyers-match-website-fe/public/uploads/who-we-help
+        public_folder: /uploads/who-we-help
+        fields:
+          - label: Cards
+            name: cards
+            widget: list
+            collapsed: false
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Tag, name: tag, widget: string }
+              - { label: Description, name: desc, widget: text }
+              - { label: Image, name: image, widget: image }
+
+      - name: right-fit
+        label: Are we the right fit?
+        file: buyers-match-website-fe/src/content/home/right-fit.json
+        fields:
+          - { label: "We're a great fit if…", name: "yes", widget: list, field: { label: Point, name: point, widget: string } }
+          - { label: "We're not the right fit if…", name: "no", widget: list, field: { label: Point, name: point, widget: string } }
+
+      - name: awards
+        label: Awards
+        file: buyers-match-website-fe/src/content/home/awards.json
+        media_folder: /buyers-match-website-fe/public/uploads/awards
+        public_folder: /uploads/awards
+        fields:
+          - label: Awards
+            name: items
+            widget: list
+            summary: "{{fields.year}} — {{fields.title}}"
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Image description (for accessibility & Google), name: alt, widget: string }
+              - { label: Year, name: year, widget: string }
+              - { label: Award title, name: title, widget: string }
+              - { label: Awarded by, name: org, widget: string }
+              - { label: Description, name: desc, widget: text, hint: "Wrap words in **double asterisks** to make them bold." }
+              - { label: Ribbon text, name: ribbon, widget: string }
+              - { label: Badge emoji, name: emoji, widget: string }
+              - { label: Colour, name: colour, widget: select, options: [teal, purple, gold, navy], default: teal }
+
+      - name: credentials
+        label: Credentials strip
+        file: buyers-match-website-fe/src/content/home/credentials.json
+        fields:
+          - label: Credentials
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - label: Icon
+                name: icon
+                widget: select
+                options:
+                  - { label: "Award ribbon (e.g. BAI)", value: bai }
+                  - { label: "Licence card", value: licensed }
+                  - { label: "Scales (no conflicts)", value: conflicts }
+                  - { label: "Shield (insurance)", value: insurance }
+                  - { label: "Google", value: google }
+                  - { label: "Star", value: star }
+              - { label: Title, name: title, widget: string }
+              - { label: Sub-text, name: sub, widget: text, required: false, hint: "Optional. Press Enter for a line break." }
+
+  # ── TESTIMONIALS ────────────────────────────────────────────
+  - name: testimonials
+    label: Video testimonials
+    files:
+      - name: videos
+        label: YouTube video testimonials
+        file: buyers-match-website-fe/src/content/testimonials/videos.json
+        fields:
+          - label: Videos
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Title, name: name, widget: string }
+              - { label: Sub-heading (e.g. First Home · Brisbane), name: subheading, widget: string }
+              - { label: YouTube video ID, name: youtubeId, widget: string, hint: "The code after watch?v= in the YouTube link, e.g. vmZ-wy00s-k. The thumbnail is pulled from YouTube automatically." }
+
+  # ── SETTINGS ────────────────────────────────────────────────
+  - name: settings
+    label: Contact details & socials
+    files:
+      - name: general
+        label: Contact details, WhatsApp & social links
+        file: buyers-match-website-fe/src/content/settings/general.json
+        fields:
+          - { label: Business name, name: siteName, widget: string }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Address, name: address, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Calendly booking link, name: calendly, widget: string }
+              - label: Phone numbers
+                name: phones
+                widget: list
+                collapsed: false
+                summary: "{{fields.name}}: {{fields.number}}"
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Number, name: number, widget: string }
+          - label: WhatsApp button
+            name: whatsapp
+            widget: object
+            fields:
+              - { label: "WhatsApp number (international format, e.g. +61466914929)", name: phoneNumber, widget: string }
+              - { label: Pre-filled message, name: prefilledMessage, widget: text }
+          - label: Social links
+            name: socials
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Platform, name: name, widget: select, options: [facebook, instagram, youtube, linkedin, tiktok, google, maps] }
+              - { label: Link, name: url, widget: string }

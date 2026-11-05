@@ -1,0 +1,16 @@
+{
+  "steps": [
+    { "title": "Free Strategy Session", "desc": "Understand your goals, budget & timeline. Zero obligation, complete clarity." },
+    { "title": "Custom Investment Brief", "desc": "Define the ideal asset profile matched to your M4 goals and financial position." },
+    { "title": "Market & Suburb Research", "desc": "Full M2 & M3 analysis — we save you 200+ hours of research time." },
+    { "title": "Property Shortlisting", "desc": "Only pre-vetted, high-conviction opportunities land in your inbox. No noise." },
+    { "title": "Due Diligence & Negotiation", "desc": "We coordinate inspections, reports and price negotiation with hard data." },
+    { "title": "Settlement & Beyond", "desc": "PM referrals and ongoing portfolio advice. The relationship continues." }
+  ],
+  "checklist": [
+    "Renter proportion", "Vacancy rate", "Auction clearance rate", "Days on market",
+    "Average vendor discounting", "Stock on market", "Online search interest", "Gross yield",
+    "Demand supply ratio", "Median value growth", "Rental growth", "'Accessibility' infrastructure",
+    "'Job' infrastructure", "Building approvals", "Developable land supply"
+  ]
+}

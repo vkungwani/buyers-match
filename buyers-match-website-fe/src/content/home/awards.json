@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "image": "/uploads/awards/award1_low.webp",
+      "alt": "Buyer's Agent Institute Rising Star Award 2024 — Puja Dhanetwal",
+      "colour": "teal",
+      "emoji": "⭐",
+      "year": "2024",
+      "title": "Rising Star Award",
+      "org": "Buyer's Agent Institute",
+      "desc": "It was presented to **Puja Dhanetwal** in recognition of outstanding achievement and truly exceptional client outcomes as a highly promising and emerging buyer's agent in Australia.",
+      "ribbon": "🏆 Puja Dhanetwal · BAI 2024"
+    },
+    {
+      "image": "/uploads/awards/award2.jpeg",
+      "alt": "Monash Business Awards 2024/25 Nominee — BuyersMatch Professional Services",
+      "colour": "purple",
+      "emoji": "🎖️",
+      "year": "2024 / 25",
+      "title": "Professional Services Nominee",
+      "org": "Monash Business Awards",
+      "desc": "BuyersMatch was nominated for the **2024/25 Monash Business Awards** in the Professional Services category — recognising excellence and impact in the local business community.",
+      "ribbon": "🎖️ MBA Nominee · Presented 18 June 2025"
+    }
+  ]
+}

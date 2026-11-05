@@ -1,23 +1,15 @@
+import processContent from '../content/home/process.json';
 import React, { useRef, useEffect, useState } from 'react';
 import AnimatedText from './AnimatedText';
 import { motion } from 'framer-motion';
 import { StaggerContainer, itemVariants } from './Animations';
 
-const steps = [
-  { num: '01', title: 'Free Strategy Session', desc: 'Understand your goals, budget & timeline. Zero obligation, complete clarity.' },
-  { num: '02', title: 'Custom Investment Brief', desc: 'Define the ideal asset profile matched to your M4 goals and financial position.' },
-  { num: '03', title: 'Market & Suburb Research', desc: 'Full M2 & M3 analysis — we save you 200+ hours of research time.' },
-  { num: '04', title: 'Property Shortlisting', desc: 'Only pre-vetted, high-conviction opportunities land in your inbox. No noise.' },
-  { num: '05', title: 'Due Diligence & Negotiation', desc: 'We coordinate inspections, reports and price negotiation with hard data.' },
-  { num: '06', title: 'Settlement & Beyond', desc: 'PM referrals and ongoing portfolio advice. The relationship continues.' },
-];
+const steps = processContent.steps.map((s, i) => ({
+  num: String(i + 1).padStart(2, '0'),
+  ...s,
+}));
 
-const checklistItems = [
-  'Renter proportion','Vacancy rate','Auction clearance rate','Days on market',
-  'Average vendor discounting','Stock on market','Online search interest','Gross yield',
-  'Demand supply ratio','Median value growth','Rental growth',"'Accessibility' infrastructure",
-  "'Job' infrastructure",'Building approvals','Developable land supply'
-];
+const checklistItems = processContent.checklist;
 
 const Process = () => {
   const stepsRef = useRef(null);
@@ -63,7 +55,7 @@ const Process = () => {
               <AnimatedText
                 className="font-['Playfair_Display',Georgia,serif] text-[clamp(30px,4.2vw,50px)] font-bold text-white leading-[1.1] mb-5"
                 textParts={[
-                  { text: "6 steps from brief " },
+                  { text: `${steps.length} steps from brief ` },
                   { br: true },
                   { text: "to settlement", em: true }
                 ]}
@@ -111,7 +103,7 @@ const Process = () => {
             <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(42,191,191,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(42,191,191,.05)_1px,transparent_1px)] bg-[length:38px_38px]" />
             <div className="relative z-[1]">
               <h3 className="font-['Playfair_Display',Georgia,serif] text-[23px] text-white mb-[5px]">Our Suburb Filter</h3>
-              <div className="text-[12.5px] text-white/50 mb-6">15 of the 38 parameters we use to shortlist a suburb</div>
+              <div className="text-[12.5px] text-white/50 mb-6">{checklistItems.length} of the 38 parameters we use to shortlist a suburb</div>
               <StaggerContainer className="flex flex-col gap-[9px]" stagger={0.08} once={true}>
                 {checklistItems.map((item, i) => (
                   <motion.div
@@ -127,7 +119,7 @@ const Process = () => {
                 ))}
               </StaggerContainer>
               <div className="mt-3.5 px-[14px] py-2.5 bg-[rgba(42,191,191,.08)] border border-[rgba(42,191,191,.2)] rounded-[8px] text-[11.5px] text-white/50 text-center">
-                <span className="text-[#2ABFBF] font-bold">15 of 38 parameters</span> shown &nbsp;·&nbsp; Full analysis applied to every shortlisted suburb
+                <span className="text-[#2ABFBF] font-bold">{checklistItems.length} of 38 parameters</span> shown &nbsp;·&nbsp; Full analysis applied to every shortlisted suburb
               </div>
             </div>
           </div>

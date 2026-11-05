@@ -4,6 +4,7 @@ import { siteData } from '../config/siteData';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { blogsData } from '../config/blogs';
+import { marked } from 'marked';
 
 const BlogPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -62,28 +63,11 @@ const BlogPage: React.FC = () => {
                         </p>
 
                         <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
-                            {detailedBlog?.content ? (
-                                detailedBlog.content.map((section: any, idx: number) => {
-                                    if (section.type === "heading") {
-                                        return <h2 key={idx} className="text-3xl font-black text-gray-900 mt-12 mb-6">{section.text}</h2>;
-                                    }
-                                    if (section.type === "subheading") {
-                                        return <h3 key={idx} className="text-2xl font-bold text-gray-800 mt-8 mb-4">{section.text}</h3>;
-                                    }
-                                    if (section.type === "paragraph") {
-                                        return <p key={idx}>{section.text}</p>;
-                                    }
-                                    if (section.type === "list") {
-                                        return (
-                                            <ul key={idx} className="list-disc pl-6 space-y-4 my-6">
-                                                {section.items.map((item: string, i: number) => (
-                                                    <li key={i}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        );
-                                    }
-                                    return null;
-                                })
+                            {detailedBlog?.body ? (
+                                <div
+                                    className="blog-body"
+                                    dangerouslySetInnerHTML={{ __html: marked.parse(detailedBlog.body, { async: false }) as string }}
+                                />
                             ) : (
                                 <div className="space-y-8">
                                     <p>Content is being updated. Please check back soon.</p>

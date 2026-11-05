@@ -25,6 +25,7 @@ import SocialBar from "./components/SocialBar";
 import Contact from "./components/Contact";
 import { WhatsAppFloatingButton } from "./components/WaButton";
 import SuperNavbar from "./components/SuperNavbar";
+import Seo from "./components/Seo";
 
 // Pages
 import BlogPage from "./pages/BlogPage";
@@ -105,6 +106,7 @@ Method,HowWeHelp, Results, Testimonials
 
   return (
     <div className="App">
+      <Seo />
       <SuperNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -116,12 +118,14 @@ Method,HowWeHelp, Results, Testimonials
         <Route path="/disclaimer" element={<Disclaimer openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
         <Route path="/cashflow-calculator" element={<CashflowCalculator openLeadModal={openLeadModal} openCalendly={openCalendly} />} />
       </Routes>
-      <PopupModal
-        url={siteData.contact.calendly}
-        onModalClose={() => setIsOpen(false)}
-        open={isOpen}
-        rootElement={document.getElementById("root")}
-      />
+      {typeof document !== "undefined" && (
+        <PopupModal
+          url={siteData.contact.calendly}
+          onModalClose={() => setIsOpen(false)}
+          open={isOpen}
+          rootElement={document.getElementById("root")}
+        />
+      )}
       <LeadCaptureModal
         isOpen={isLeadModalOpen}
         onClose={() => setIsLeadModalOpen(false)}

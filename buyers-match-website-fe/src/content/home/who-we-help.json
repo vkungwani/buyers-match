@@ -1,0 +1,10 @@
+{
+  "cards": [
+    { "title": "Property Investors", "desc": "Building property portfolios across Australia. We identify high-growth opportunities and optimize your investment strategy for maximum yield.", "image": "/uploads/who-we-help/property_investors.avif", "tag": "Investor Match" },
+    { "title": "Interstate Buyers", "desc": "Invest anywhere in Australia with local knowledge on the ground. We are your eyes and ears in every market.", "image": "/uploads/who-we-help/interstate-buyers.webp", "tag": "Nationwide" },
+    { "title": "SMSF Investors", "desc": "Specialized property acquisition for Super Funds. Full compliance while maximizing long-term returns for your retirement portfolio.", "image": "/uploads/who-we-help/smsf_investors.avif", "tag": "Super Fund" },
+    { "title": "Renovators & Flippers", "desc": "Find undervalued properties with strong renovation or flip potential. We source the deals others miss.", "image": "/uploads/who-we-help/Renovation.webp", "tag": "Value Add" },
+    { "title": "Owner Occupiers", "desc": "Find and secure the right home without competing blind at auction. Expert advocacy on your side every step of the way.", "image": "/uploads/who-we-help/owner-occupiers.webp", "tag": "Home Buyer" },
+    { "title": "First Home Buyers", "desc": "Navigate your first purchase with expert guidance from day one. We simplify the complex so you buy with confidence.", "image": "/uploads/who-we-help/first-home-buyers.webp", "tag": "First Purchase" }
+  ]
+}

@@ -2,3 +2,5 @@ node_modules/
 dist/ 
 target/ 
 *.class 
+
+.DS_Store

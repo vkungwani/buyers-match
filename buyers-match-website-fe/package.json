@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:spa": "vite build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
@@ -15,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^3.2.0",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.575.0",
+    "marked": "18.0.14",
     "react": "^19.2.4",
     "react-calendly": "^4.4.0",
     "react-dom": "^19.2.4",

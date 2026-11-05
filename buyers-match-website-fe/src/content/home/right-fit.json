@@ -1,0 +1,15 @@
+{
+  "yes": [
+    "You want to build a long-term property portfolio",
+    "You value strategy and research over speculation",
+    "You're open to investing across Australia",
+    "You want experts negotiating and sourcing the best opportunities",
+    "You prefer a done-for-you approach"
+  ],
+  "no": [
+    "You're looking for quick flips or speculative deals",
+    "You only want to buy in one suburb because you like it",
+    "You want to bid at auctions yourself",
+    "You're not ready to invest within the next 3–6 months"
+  ]
+}
