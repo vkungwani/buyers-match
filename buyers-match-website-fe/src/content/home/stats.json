@@ -1,8 +1,32 @@
 {
   "items": [
-    { "value": 175, "decimals": 0, "prefix": "", "suffix": "+", "label": "Properties Secured" },
-    { "value": 5, "decimals": 1, "prefix": "", "suffix": "★", "label": "All 5 Star Reviews" },
-    { "value": 100, "decimals": 0, "prefix": "$", "suffix": "M+", "label": "Properties Purchased" },
-    { "value": 30, "decimals": 0, "prefix": "$", "suffix": "M+", "label": "Equity Generated" }
+    {
+      "value": 200,
+      "decimals": 0,
+      "prefix": "",
+      "suffix": "+",
+      "label": "Properties Secured"
+    },
+    {
+      "value": 5,
+      "decimals": 1,
+      "prefix": "",
+      "suffix": "★",
+      "label": "All 5 Star Reviews"
+    },
+    {
+      "value": 100,
+      "decimals": 0,
+      "prefix": "$",
+      "suffix": "M+",
+      "label": "Properties Purchased"
+    },
+    {
+      "value": 30,
+      "decimals": 0,
+      "prefix": "$",
+      "suffix": "M+",
+      "label": "Equity Generated"
+    }
   ]
 }
